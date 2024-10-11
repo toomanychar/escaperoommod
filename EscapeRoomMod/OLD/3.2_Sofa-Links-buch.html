@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html> <!-- Beginn einer HTML-Seite -->
+
+	<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>E.ON IT-Security Escape Room</title> <!-- Tab-Name -->
+	
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+	</head>
+	
+	<body>
+	<br> <!-- nächste Zeile -->
+	<br> <!-- nächste Zeile -->
+	<div class="container"> <!-- START div container -->
+	
+	<div class="jumbotron">
+	
+	<!-- E.ON Bild einfügen -->
+	<img src="images/eon-logo.svg"> <!-- Quelle: https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/content/general/logo/logo-eon-red.svg -->	
+	
+	<!-- Navigation -->
+	<center>	
+	  <a class="btn btn-primary btn-lg" href="3.2_Sofa-Links.html" role="button">&#9660; Zurück</a>
+	</center>	
+	<br><!-- nächste Zeile -->
+	
+	<!-- Bild einfügen -->
+	<center>
+	<img src="images/raum2/linkes-sofa-buch.png" width="1000" height="500"> <!-- Quelle: Eigene Darstellung -->
+	<br><!-- nächste Zeile -->
+	</center>
+	
+	<br><!-- nächste Zeile -->
+	<!-- Text einfügen -->
+	<center>
+	<p>In dem Buch befindet sich ein Lesezeichen im Kapitel "Kerckhoffs Prinzip". Das ist sicherlich kein Zufall.</p>
+	</center>
+	
+	<!-- Quelle: https://www.schneier.com/crypto-gram/archives/2002/0515.html -->
+	<br><!-- nächste Zeile -->
+	<!-- Text einfügen -->
+	<center>
+	<h2>Geheimhaltung, Sicherheit und Obskurität</h2>
+	</center>
+	<p>
+	Eine Grundregel der Kryptographie ist die Verwendung von veröffentlichten, öffentlichen Algorithmen 
+	und Protokollen. Dieser Grundsatz wurde erstmals 1883 von Auguste Kerckhoffs formuliert: 
+	In einem gut konzipierten kryptografischen System muss nur der Schlüssel geheim sein; der Algorithmus 
+	sollte keine Geheimhaltung aufweisen. Moderne Kryptographen haben sich dieses Prinzip zu eigen gemacht 
+	und nennen alles andere "Sicherheit durch Unklarheit". Jedes System, das versucht, seine Algorithmen 
+	aus Sicherheitsgründen geheim zu halten, wird von der Gemeinschaft schnell abgetan und als "Schlangenöl" 
+	oder noch schlimmer bezeichnet. Dies gilt für die Kryptographie, aber die allgemeine Beziehung zwischen 
+	Geheimhaltung und Sicherheit ist komplizierter als das Kerckhoffsche Prinzip vermuten lässt.
+	</p>
+	
+	<p>
+	Die Argumentation hinter Kerckhoffs Prinzip ist überzeugend. Wenn der kryptographische Algorithmus geheim 
+	bleiben muss, damit das System sicher ist, dann ist das System weniger sicher. Das System ist weniger sicher, 
+	weil die Sicherheit beeinträchtigt wird, wenn der Algorithmus in feindliche Hände gerät. Es ist schwieriger, 
+	verschiedene Kommunikationsnetze einzurichten, da sowohl die Algorithmen als auch die Schlüssel geändert 
+	werden müssen. Das daraus resultierende System ist anfälliger, einfach weil mehr Geheimnisse bewahrt werden 
+	müssen. In einem gut durchdachten System muss nur der Schlüssel geheim sein; alles andere sollte als öffentlich 
+	gelten. Oder anders ausgedrückt: Wenn der Algorithmus, das Protokoll oder die Implementierung geheim gehalten 
+	werden müssen, dann sind sie eigentlich Teil des Schlüssels und sollten auch so behandelt werden.
+	</p>
+	
+	<p>
+	Das Kerckhoffsche Prinzip bezieht sich nicht auf die tatsächliche Veröffentlichung von Algorithmen und Protokollen, 
+	sondern nur auf die Forderung, die Sicherheit unabhängig von ihrer Geheimhaltung zu machen. Zu Kerckhoffs 
+	Zeiten gab es noch keine große kryptografische Gemeinschaft, die kryptografische Systeme analysieren und kritisieren 
+	konnte, so dass die Veröffentlichung nicht viel Nutzen brachte. Heute ist die Veröffentlichung von erheblichem Nutzen, 
+	und noch mehr Nutzen ergibt sich aus der Verwendung bereits veröffentlichter, bereits analysierter Entwürfe anderer.
+	Diese Entwürfe geheim zu halten, bedeutet unnötige Unklarheit. Das Kerckhoffsche Prinzip besagt, dass die Veröffentlichung 
+	keinen Sicherheitsnachteil mit sich bringen sollte; die moderne kryptographische Gemeinschaft zeigt immer wieder, dass die 
+	Veröffentlichung enorme Vorteile mit sich bringt.
+	</p>
+	
+	<p>
+	Der Vorteil ist die Überprüfung durch Fachkollegen. Kryptografie ist schwierig, und fast alle kryptografischen Systeme sind unsicher. Es bedarf der jahrelangen Arbeit der kryptografischen Gemeinschaft, um ein System ordnungsgemäß zu überprüfen. Fast alle sicheren kryptografischen Systeme wurden mit öffentlichen und veröffentlichten Algorithmen und Protokollen entwickelt. Ich kann mich an kein einziges kryptografisches System erinnern, das im Geheimen entwickelt wurde und das, als es schließlich veröffentlicht wurde, keine Schwachstellen aufwies, die von der kryptografischen Gemeinschaft entdeckt wurden. Dazu gehören auch der Skipjack-Algorithmus und das Clipper-Protokoll, die beide von der NSA entwickelt wurden.
+	</p>
+	<p style="text-align: right;">Bruce Schneier</p>
+	
+	<!-- Navigation -->
+	<center>
+	  <a class="btn btn-primary btn-lg" href="1.0_Notizbuch.html" role="button" style="background-color:#DF7401">Notizbuch</a>
+	</center>
+	<br> <!-- nächste Zeile -->
+
+	<!-- Timer Script einbinden -->	
+	<script src="js/time.js"></script>
+	<!-- Timer Script anzeigen -->	
+	<div id="total-time-left" align="right"> </div>	
+
+	</div> <!-- ENDE div container -->
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	</body>
+
+</html> <!-- Ende einer HTML-Seite -->

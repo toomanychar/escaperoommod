@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html> <!-- Beginn einer HTML-Seite -->
+
+	<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>E.ON IT-Security Escape Room</title> <!-- Tab-Name -->
+	
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+	</head>
+		
+	<body>
+	<br> <!-- nächste Zeile -->
+	<br> <!-- nächste Zeile -->
+	<div class="container"> <!-- START div container -->
+	
+	<div class="jumbotron">
+	
+	<!-- E.ON Bild einfügen -->
+	<img src="images/eon-logo.svg"> <!-- Quelle: https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/content/general/logo/logo-eon-red.svg -->
+		
+	<!-- Navigation -->
+	<center>
+	  <a class="btn btn-primary btn-lg" href="4.1_Links.html" role="button">&#9660; Zurück</a>
+	</center>
+	<br>
+	<center>
+	<!-- Bild einfügen -->
+	<img src="images/raum3/papierkorb.png" width="1000" height="500"> <!-- Quelle: Eigene Darstellung -->
+	<br><br><!-- nächste Zeile -->
+	</center>
+	
+	<center>
+	<p>Im Mülleimer sind einige zerknüllte Zettel. Hier hat jemand fleißig gerechnet. 
+	Dabei wurden verschiedene Zahlensysteme wie das Oktal-, Dezimal-, oder Binärsystem verwendet.
+	</p>
+	</center>
+	
+	<center>
+	<p>
+	Binärsystem (2er-System)<br>
+	Oktalsystem (8er-System)<br>
+	Dezimal (10ner-System)<br>
+	</p>
+	</center><br><br><!-- nächste Zeile -->
+	
+	<p>
+	<!-- Quelle zur Umrechung: https://www.arndt-bruenner.de/mathe/scripts/Zahlensysteme.htm --> 
+	Die Dezimalzahl 2512 wird ins 8er-System umgewandelt<br>
+	Gehe nach folgendem Verfahren vor:<br>
+	(1) Teile die Zahl mit Rest durch 8.<br>
+	(2) Der Divisionsrest ist die nächste Ziffer (von rechts nach links).<br>
+	(3) Falls der (ganzzahlige) Quotient = 0 ist, bist du fertig,<br>
+     andernfalls nimm den (ganzzahligen) Quotienten als neue Zahl <br>
+     und wiederhole ab (1).<br>
+     2512 : 8 =  314  Rest: 0<br>
+      314 : 8 =   39  Rest: 2<br>
+       39 : 8 =    4  Rest: 7<br>
+        4 : 8 =    0  Rest: 4<br>
+     Resultat: 4720	<br>
+	</p><br><br><!-- nächste Zeile -->
+	
+	<p>
+	<!-- Quelle zur Umrechung: https://www.arndt-bruenner.de/mathe/scripts/Zahlensysteme.htm --> 
+	Die Dezimalzahl 2512 wird ins 2er-System umgewandelt<br>
+	Gehe nach folgendem Verfahren vor:<br>
+	(1) Teile die Zahl mit Rest durch 2.<br>
+	(2) Der Divisionsrest ist die nächste Ziffer (von rechts nach links).<br>
+	(3) Falls der (ganzzahlige) Quotient = 0 ist, bist du fertig,<br>
+    andernfalls nimm den (ganzzahligen) Quotienten als neue Zahl <br>
+    und wiederhole ab (1).<br>
+
+     2512 : 2 = 1256  Rest: 0<br>
+     1256 : 2 =  628  Rest: 0<br>
+      628 : 2 =  314  Rest: 0<br>
+      314 : 2 =  157  Rest: 0<br>
+      157 : 2 =   78  Rest: 1<br>
+       78 : 2 =   39  Rest: 0<br>
+       39 : 2 =   19  Rest: 1<br>
+       19 : 2 =    9  Rest: 1<br>
+        9 : 2 =    4  Rest: 1<br>
+        4 : 2 =    2  Rest: 0<br>
+        2 : 2 =    1  Rest: 0<br>
+        1 : 2 =    0  Rest: 1<br>
+     Resultat: 100111010000<br>
+	</p><br><br><!-- nächste Zeile -->
+	
+	<!-- Quelle: https://www.elektronik-kompendium.de/sites/dig/0208051.htm -->
+	<h2>Duales Zahlensystem (Dualsystem)</h2>
+	<p>Die dezimale Zählweise (10er) mag uns logisch erscheinen. Doch die Natur hat keine 10 
+	Finger und 10 Zehen. Sie operiert auf einem einfacheren Zahlensystem. Dem dualen Zahlensystem
+	mit der Basis 2. Dabei handelt es sich um zwei Zustände. Ja oder Nein, Ein oder Aus.<br>
+	Das Duale Zahlensystem ist entstanden, weil man in der elektronischen Datenverarbeitung 
+	nur 2 Zustände unterscheiden kann. Diese sogenannten binären Zustände werden üblicherweise 
+	mit H und L abgekürzt. Die logischen Zustände sind 1 und 0.
+	</p>
+	
+	<!-- Navigation -->
+	<center>
+	  <a class="btn btn-primary btn-lg" href="1.0_Notizbuch.html" role="button" style="background-color:#DF7401">Notizbuch</a>
+	</center>
+	<br> <!-- nächste Zeile -->	
+	
+	<!-- Timer Script einbinden -->	
+	<script src="js/time.js"></script>
+	<!-- Timer Script anzeigen -->	
+	<div id="total-time-left" align="right"> </div>		
+	
+	</div> <!-- ENDE div container -->
+		
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	</body>
+
+</html> <!-- Ende einer HTML-Seite -->

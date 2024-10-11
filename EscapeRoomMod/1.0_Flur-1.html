@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>E.ON IT-Security Escape Room</title> <!-- Tab-Name -->
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	</head>
+	
+	<body>
+	<br><br>
+	<div class="container"> <!-- START div container -->
+	<div class="jumbotron">
+	
+	<!-- E.ON Bild -->
+	<img src="images/eon-logo.svg"> <!-- Quelle: https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/content/general/logo/logo-eon-red.svg -->
+	
+	<br><br><br>
+	
+	<!-- Szene + Navigation -->
+	<center>
+	<!-- Die Szene ist ein zentriertes div mit dem Hintergrund der eigentlichen Szene -->
+	<div class="szene" style="width:1000px; height:500px; background-image:url(images/Flur1.png); background-size: cover">
+		<!-- Die Navigation sind absolut positionierte divs, die an ihren jeweiligen Seiten stehen -->
+		<!-- Warum genau dieses Design? Da es funktioniert -->
+		<div class="navigation" style="right:90%; margin-right: -50px; top:50%; margin-top:-25px">
+			<a class="btn btn-primary btn-lg" href="1.1_Rote-Tuer.html" role="button">&#9664 Links</a>
+		</div>
+		<div class="navigation" style="right:50%; margin-right: -75px;">
+			<a class="btn btn-primary btn-lg" href="1.2_Flur-2.html" role="button">&#9650; Vorwärts</a>
+		</div>
+		<div class="navigation" style="left:90%; margin-left: -50px; top:50%; margin-top:-25px">
+			<a class="btn btn-primary btn-lg" href="1.3_Blaue-Tuer.html" role="button">Rechts &#9654;</a>
+		</div>
+	</div>
+	</center>
+	
+	<br>
+	
+	<!-- Text -->
+	<center>
+	<p>So viele Räume...</p>	  
+	<p>Wenn ich es richtig in Erinnerung habe, dann hat jeder Kollege aus Sicherheitsgründen
+	nur einen Teil des PINs erhalten, um den schwarzen Raum zum Zentralcomputer zu betreten.
+	Zum Abschalten des Netzwerks werde ich die einzelnen Ziffern des PINs jedes Kollegen sammeln müssen...
+	Insgesamt müssen 5 Ziffern gefunden werden.</p>	  
+	</center>
+	
+	<!-- Notizen -->
+	<center>
+		<iframe src="IFRAME_Notizbuch.html" height="332" width="450" title="Notizen"></iframe>
+	</center>
+
+	<!-- Timer Script einbinden -->	
+	<script src="js/time.js"></script>
+	<!-- Timer Script anzeigen -->	
+	<div id="total-time-left" align="right"> </div> 
+	
+	</div>
+	</div> <!-- ENDE div container -->
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

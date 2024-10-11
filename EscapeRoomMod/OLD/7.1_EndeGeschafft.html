@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html> <!-- Beginn einer HTML-Seite -->
+
+	<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>E.ON IT-Security Escape Room</title> <!-- Tab-Name -->
+	
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+	</head>
+	
+	<body>
+	<br> <!-- nächste Zeile -->
+	<br> <!-- nächste Zeile -->
+	<div class="container"> <!-- START div container -->
+	
+	<div class="jumbotron">
+	
+	<!-- E.ON Bild einfügen -->
+	<img src="images/eon-logo.svg"> <!-- Quelle: https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/content/general/logo/logo-eon-red.svg -->
+	
+	<!-- Überschriften -->
+	<center>
+	<h1>Geschafft!</h1>
+	<p>E.ON IT-Security Escape Room</p> 
+	</center>
+	
+	<!-- Video einfügen -->
+	<center>
+	<video width="800" height="400" autoplay controls loop>
+		<source src="videos/Team - 70345.mp4" type="video/mp4"/> <!-- Quelle: https://pixabay.com/videos/team-office-work-success-70345/ -->
+	</video>
+	</center>
+	
+	<!-- Text einfügen -->
+	<center>
+	<p>Gut gemacht! Das Netzwerk konnte abgeschaltet werden, bevor sich das Virus ausbreitet!</p>	  
+	</center>	  
+	
+	<br> <br> <!-- nächste Zeile -->
+	<!-- Text einfügen -->
+	<center>
+	<p>Vielen Dank für die Teilnahme am IT-Security Escape Room! <br>
+	Der Vollbildmodus des Browsers kann mit dem Drücken der F11-Taste verlassen werden.</p>	
+	</center>
+	
+	<!-- Timer zurücksetzen -->
+	<script>
+	localStorage.clear("count_timer");
+	</script>
+	
+	</div> <!-- ENDE div container -->
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	</body>
+
+</html> <!-- Ende einer HTML-Seite -->

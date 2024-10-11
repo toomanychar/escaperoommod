@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>E.ON IT-Security Escape Room</title> <!-- Tab-Name -->
+	
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+	<style>
+	#div1, #div2 {
+	  float: left;
+	  width: 155px;
+	  height: 75px;
+	  margin: 10px;
+	  padding: 1px;
+	  border: 2px solid #aaaaaa;
+	  
+	}
+	</style>
+	<script>
+	function allowDrop(ev) {
+	  ev.preventDefault();
+	}
+
+	function drag(ev) {
+	  ev.dataTransfer.setData("text", ev.target.id);
+	}
+
+	function drop(ev) {
+	  ev.preventDefault();
+	  var data = ev.dataTransfer.getData("text");
+	  ev.target.appendChild(document.getElementById(data));
+	}
+	</script>
+	</head>
+	<body>
+
+	<br> <!-- nächste Zeile -->
+	<br> <!-- nächste Zeile -->
+	<div class="container"> <!-- START div container -->
+	
+	<div class="jumbotron">
+		
+	<!-- E.ON Bild einfügen -->
+	<img src="images/eon-logo.svg"> <!-- Quelle: https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/content/general/logo/logo-eon-red.svg -->	
+	
+	<!-- Navigation -->
+	<center>	
+	  <a class="btn btn-primary btn-lg" href="3.1_Rechts.html" role="button">&#9660; Zurück</a>
+	</center>	
+	<br><!-- nächste Zeile -->
+	
+	<!--Quellen zur Idee: https://www.w3schools.com/html/html5_draganddrop.asp -->
+	
+	<!--Quelle zum Bild: https://pixabay.com/photos/bulletin-board-stickies-post-it-3127287/ -->
+	<center>	
+	<p>So viele Puzzle-Teile, vermutlich ergeben die bei geschickter Kombination etwas nützliches.</p>
+	</center>
+
+	<div id="div1" align="center" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" align="center" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" align="center" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" align="center" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<br><br><br><br><br>
+
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<br><br><br><br><br>
+
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<br><br><br><br><br>
+
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<br><br><br><br><br><br><br><br>
+
+	<center>
+	<br>
+	<img id="drag1" src="images\raum2\1.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag13" src="images\raum2\13.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag14" src="images\raum2\14.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag2" src="images\raum2\2.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag3" src="images\raum2\3.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag4" src="images\raum2\4.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag15" src="images\raum2\15.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag16" src="images\raum2\16.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag5" src="images\raum2\5.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag6" src="images\raum2\6.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag11" src="images\raum2\11.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag12" src="images\raum2\12.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag7" src="images\raum2\7.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag8" src="images\raum2\8.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag9" src="images\raum2\9.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag10" src="images\raum2\10.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	</center>
+	
+	<br> <!-- nächste Zeile -->
+	<!-- Navigation -->
+	<center>
+	  <a class="btn btn-primary btn-lg" href="1.0_Notizbuch.html" role="button" style="background-color:#DF7401">Notizbuch</a>
+	</center>
+	<br> <!-- nächste Zeile -->
+
+	<!-- Timer Script einbinden -->	
+	<script src="js/time.js"></script>
+	<!-- Timer Script anzeigen -->	
+	<div id="total-time-left" align="right"> </div>	
+
+	</div> <!-- ENDE div container -->
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	</body>
+
+</html> <!-- Ende einer HTML-Seite -->
+
