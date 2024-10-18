@@ -1,20 +1,11 @@
 /* 	
-	Jan-Michael Müller
-	21.05.2022
-	Der Code wurde vom Autor Werner-Zenk kopiert und an den eigenen Anforderungen angepasst,
-	siehe dazu folgende Quelle: https://werner-zenk.de/scripte/localstorage.php
-
 	<!-- Notizen Script einbinden -->
+	<center>
+		<iframe src="IFRAME_Notizbuch.html" height="332" width="450" title="Notizen"></iframe>
+	</center>
 	<script src="js/notizen.js"></script>
-
 */
 
-/* 	
-	Tymur Nazarenko
-	03.10.2024
-	Der Code wurde an die eigenen Anforderungen nochmals angepasst
-*/
-	
 	window.onload = notizen_lesen; // Notizen werden automatisch geladen
 	
 	let notizen_timer;

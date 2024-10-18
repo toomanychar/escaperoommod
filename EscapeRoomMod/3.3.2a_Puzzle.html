@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>E.ON IT-Security Escape Room</title> <!-- Tab-Name -->
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+<style>
+	#div1, #div2 {
+	  float: left;
+	  width: 155px;
+	  height: 75px;
+	  margin: 10px;
+	  padding: 1px;
+	  border: 2px solid #aaaaaa;
+	  
+	}
+	</style>
+	<script>
+	function allowDrop(ev) {
+	  ev.preventDefault();
+	}
+
+	function drag(ev) {
+	  ev.dataTransfer.setData("text", ev.target.id);
+	}
+
+	function drop(ev) {
+	  ev.preventDefault();
+	  var data = ev.dataTransfer.getData("text");
+	  ev.target.appendChild(document.getElementById(data));
+	}
+	</script>
+	</head>
+
+	<body>
+	<br><br>
+	<div class="container"> <!-- START div container -->
+	<div class="jumbotron">
+
+	<!-- E.ON Bild -->
+	<img src="images/eon-logo.svg"> <!-- Quelle: https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/content/general/logo/logo-eon-red.svg -->
+
+	<br><br><br>
+
+	<!-- Ab diesem Punkt muss man was ändern, um einen Raum zu gestalten -->
+
+	<center>
+	<a class="btn btn-primary btn-lg" href="3.3_Rechts.html" role="button">&#9660; Zurück</a> <!-- Zurück-Knopf führt zur Datei ZURUCK.html -->
+	</center>
+
+	<br>
+
+	<center>
+	<p>So viele Puzzle-Teile, vermutlich ergeben sie bei geschickter Kombination etwas nützliches.</p>
+	</center>
+
+	<br>
+
+	<div id="div1" align="center" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" align="center" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" align="center" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" align="center" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<br><br><br><br><br>
+
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<br><br><br><br><br>
+
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<br><br><br><br><br>
+
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<br><br><br><br><br><br><br><br>
+
+	<center>
+	<br>
+	<img id="drag1" src="images\3\1.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag13" src="images\3\13.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag14" src="images\3\14.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag2" src="images\3\2.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag3" src="images\3\3.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag4" src="images\3\4.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag15" src="images\3\15.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag16" src="images\3\16.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag5" src="images\3\5.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag6" src="images\3\6.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag11" src="images\3\11.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag12" src="images\3\12.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag7" src="images\3\7.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag8" src="images\3\8.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag9" src="images\3\9.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	<img id="drag10" src="images\3\10.jpg" draggable="true" ondragstart="drag(event)" width="150" height="70">
+	</center>
+	
+	<br>
+
+
+	<!-- Ab diesem Punkt soll man nichts ändern -->
+
+	<!-- Notizen -->
+	<center>
+		<iframe src="IFRAME_Notizbuch.html" height="332" width="450" title="Notizen"></iframe>
+	</center>
+
+	<!-- Timer Script einbinden -->
+	<script src="js/time.js"></script>
+	<!-- Timer Script anzeigen -->
+	<div id="total-time-left" align="right"> </div>
+
+	</div>
+	</div> <!-- ENDE div container -->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

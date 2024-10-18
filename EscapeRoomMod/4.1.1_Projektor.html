@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>E.ON IT-Security Escape Room</title> <!-- Tab-Name -->
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	</head>
+
+	<body>
+	<br><br>
+	<div class="container"> <!-- START div container -->
+	<div class="jumbotron">
+
+	<!-- E.ON Bild -->
+	<img src="images/eon-logo.svg"> <!-- Quelle: https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/content/general/logo/logo-eon-red.svg -->
+
+	<br><br><br>
+
+	<!-- Ab diesem Punkt muss man was ändern, um einen Raum zu gestalten -->
+
+	<!-- Szene + Navigation -->
+	<center>
+	<!-- Die Szene ist ein zentriertes div mit dem Hintergrund der eigentlichen Szene -->
+	<div class="szene" style="width:1000px; height:500px; background-image:url(images/4/projektor.png); background-size: cover"> <!-- Der Hintergrund (also, die Szene) ist die datei images/GRAFIK.png -->
+		<!-- Die Navigation sind absolut positionierte divs, die an ihren jeweiligen Seiten stehen -->
+		<!-- Warum genau dieses Design? Da es funktioniert -->
+
+		<!-- Von dieser Navigation sollen nur die Richtungen bleiben, die man implementieren möchte. Wenn man z.B. keine Links-Richtung implementieren möchte, sollte man den Links-Knopf von seinem Anfangs-Zeile zu seiner Ende-Zeile löschen -->
+		<div class="navigation" style="right:50%; margin-right: -75px; top:90%; margin-top:-25px"> <!-- Zurück-Knopf Anfang -->
+			<a class="btn btn-primary btn-lg" href="4.1_Raum-Gruen.html" role="button">&#9660; Zurück</a> <!-- Zurück-Knopf führt zur Datei ZURUCK.html -->
+		</div> <!-- Zurück-Knopf Ende -->
+	</div>
+	</center>
+
+	<br>
+
+	<!-- Text -->
+	<center>
+	<p>Hier liegen Unterlagen von einem Kollegen, vermutlich bezüglich eines kommenden Vortrags. <br>
+	Es liegen hier mehrere Artikel mit Informationen über die Standardnetzspannung von Steckdosen in Deutschland.
+	</p>
+	</center>	
+	<br><br><br>
+		
+	<!-- Quelle: https://www.verivox.de/strom/themen/230-volt/ -->
+	<h2>Wie gefährlich ist ein Stromschlag durch 230-Volt-Haushaltsstrom?</h2>
+	<p>Am häufigsten ereignen sich Stromunfälle in den eigenen vier Wänden. Besonders oft kommt es zu entsprechenden Zwischenfällen durch handwerkliche Arbeiten, beispielsweise beim Auswechseln einer Glühbirne oder beim Reparieren eines Wasserkochers. Insbesondere ältere Geräte und beschädigte Kabel stellen eine ernstzunehmende Gefahrenquelle dar.</p>
+	<p>Welche Auswirkungen ein Stromschlag hat, hängt von unterschiedlichen Faktoren ab – neben der Spannung und der Stromstärke insbesondere von der Kontaktfläche, der Wirkdauer und dem Weg, den sich der Strom durch den Körper sucht. Prinzipiell sollten Verbraucher jedoch nicht den Fehler begehen, die Gefahr eines Stromschlags zu unterschätzen. Dieser kann nämlich sowohl Herzrhythmusstörungen (Kammerflimmern) als auch eine Lähmung der Atemmuskulatur nach sich ziehen.</p>
+	<p>Da Beschwerden auch mit Verspätung auftreten können, sollten Betroffene nach Möglichkeit einen Arzt aufsuchen, selbst wenn es ihnen direkt nach dem Unfall gut geht. Kommt es nach einem Stromunfall zu Herzrasen, Atemnot oder einem Krampfgefühl in der Brustgegend, ist es notwendig, sofort den Rettungsdienst anzurufen.</p>
+	<p align="right">Verivox</p>
+	<br><br><br>
+	
+	<center>
+	<img src="images/4/weltkarte.png" width="1000" height="500"> <!-- Quelle: https://www.iec.ch/world-plugs -->
+	<br><br>
+	</center>
+	<p align="right">International Electrotechnical Commission</p>
+	<br><br><br>
+		
+	<!-- Quelle: https://www.enercity.de/magazin/mein-leben/230-volt-netzspannung -->
+	<h2>Warum kommen bei uns 230 Volt aus der Steckdose?</h2>
+	<p align="left">
+	220, 230, 240: Wie viel Spannung soll’s sein? <br>
+    Volt ist eine Maßeinheit für die elektrische Spannung des Stroms. Einfach ausgedrückt: 
+	Die Einheit gibt an, wie stark der Antrieb des elektrischen Stroms ist, also der Druck, 
+	mit dem der Strom durch das Kabel gedrückt wird. Die so entstandene Netzspannung liegt in 
+	Deutschland und vielen anderen Ländern in Europa und der Welt heute bei 230 Volt. 
+	Das war nicht immer so: In Deutschland, Österreich und der Schweiz beispielsweise hatte 
+	man sich beim Aufbau des Stromnetzes im 19. Jahrhundert zunächst für 220 Volt entschieden, 
+	in Großbritannien dagegen für 240 Volt. Erst 1983 haben sich die europäischen Länder auf 
+	eine Standardnetzspannung von 230 Volt geeinigt, um ihre Stromnetze miteinander verbinden 
+	zu können. Die Umstellung von 220 auf 230 Volt erfolgte in Deutschland dann ab 1987. 
+	Seit 2003 darf die Netzspannung von 230 Volt um plus/minus zehn Prozent abweichen, 
+	sodass ältere Geräte mit 220 Volt weiterhin genutzt werden können.
+	</p>
+	<p align="right">Enercity vom 27. April 2022 </p>
+
+	<!-- Ab diesem Punkt soll man nichts ändern -->
+
+	<!-- Notizen -->
+	<center>
+		<iframe src="IFRAME_Notizbuch.html" height="332" width="450" title="Notizen"></iframe>
+	</center>
+
+	<!-- Timer Script einbinden -->
+	<script src="js/time.js"></script>
+	<!-- Timer Script anzeigen -->
+	<div id="total-time-left" align="right"> </div>
+
+	</div>
+	</div> <!-- ENDE div container -->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

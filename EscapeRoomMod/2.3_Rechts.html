@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>E.ON IT-Security Escape Room</title> <!-- Tab-Name -->
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	</head>
+	
+	<body>
+	<br><br>
+	<div class="container"> <!-- START div container -->
+	<div class="jumbotron">
+		
+	<!-- E.ON Bild -->
+	<img src="images/eon-logo.svg"> <!-- Quelle: https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/content/general/logo/logo-eon-red.svg -->
+	
+	<br><br><br>
+	
+	<!-- Ab diesem Punkt muss man was ändern, um einen Raum zu gestalten -->
+	
+	<!-- Szene + Navigation -->
+	<center>
+	<!-- Die Szene ist ein zentriertes div mit dem Hintergrund der eigentlichen Szene -->
+	<div class="szene" style="width:1000px; height:500px; background-image:url(images/2/Rot_Rechts.png); background-size: cover"> <!-- Der Hintergrund (also, die Szene) ist die datei images/GRAFIK.png -->
+		<!-- Die Navigation sind absolut positionierte divs, die an ihren jeweiligen Seiten stehen -->
+		<!-- Warum genau dieses Design? Da es funktioniert -->
+		
+		<!-- Von dieser Navigation sollen nur die Richtungen bleiben, die man implementieren möchte. Wenn man z.B. keine Links-Richtung implementieren möchte, sollte man den Links-Knopf von seinem Anfangs-Zeile zu seiner Ende-Zeile löschen -->
+		<div class="navigation" style="right:90%; margin-right: -50px; top:50%; margin-top:-25px"> <!-- Links-Knopf Anfang -->
+			<a class="btn btn-primary btn-lg" href="2.1_Raum-Rot.html" role="button">&#9664; Links</a> <!-- Links-Knopf führt zur Datei LINKS.html -->
+		</div>  <!-- Links-Knopf Ende -->
+		<!-- Point-And-Click System -->
+		<a class="btn-pac" style="left:17.3%; top:50%; width:62px; height:120px;" href="2.3.1_Pflanze.html"></a>
+		<a class="btn-pac" style="left:44%; top:10%; width:220px; height:154px;" href="2.3.3_Tafel.html"></a>
+		<a class="btn-pac" style="left:32%; top:41.5%; width:455px; height:185px;" href="2.3.2_Sofa.html"></a>
+
+	</div>
+	</center>
+	
+	<br>
+	
+	<!-- Text -->
+	<center>
+	<p>Ich sollte nach Hinweisen zur PIN suchen.</p>
+	<h5>Sie können mit Objekten interagieren.</h5>
+	</center>
+	</center>
+	
+	<!-- Ab diesem Punkt soll man nichts ändern -->
+	
+	<!-- Notizen -->
+	<center>
+		<iframe src="IFRAME_Notizbuch.html" height="332" width="450" title="Notizen"></iframe>
+	</center>
+
+	<!-- Timer Script einbinden -->	
+	<script src="js/time.js"></script>
+	<!-- Timer Script anzeigen -->	
+	<div id="total-time-left" align="right"> </div> 
+	
+	</div>
+	</div> <!-- ENDE div container -->
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

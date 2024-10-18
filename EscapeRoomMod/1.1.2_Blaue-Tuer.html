@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>E.ON IT-Security Escape Room</title> <!-- Tab-Name -->
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	</head>
+	
+	<body>
+	<br><br>
+	<div class="container"> <!-- START div container -->
+	<div class="jumbotron">
+	
+	<!-- E.ON Bild -->
+	<img src="images/eon-logo.svg"> <!-- Quelle: https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/content/general/logo/logo-eon-red.svg -->
+	
+	<br><br><br>
+	
+	<!-- Szene + Navigation -->
+	<center>
+	<!-- Die Szene ist ein zentriertes div mit dem Hintergrund der eigentlichen Szene -->
+	<div class="szene" style="width:1000px; height:500px; background-image:url(images/1/Blaue-Tuer.png); background-size: cover">
+		<!-- Die Navigation sind absolut positionierte divs, die an ihren jeweiligen Seiten stehen -->
+		<!-- Warum genau dieses Design? Da es funktioniert -->
+		<div class="navigation" style="right:50%; margin-right: -100px;">
+			<a class="btn btn-primary btn-lg" href="3.1_Raum-Blau.html" role="button">&#9650; Raum betreten</a>
+		</div>
+		<div class="navigation" style="right:50%; margin-right: -75px; top:90%; margin-top:-25px">
+			<a class="btn btn-primary btn-lg" href="1.1_Flur1.html" role="button">&#9660; Zurück</a>
+		</div>
+	</div>
+	</center>
+	
+	<br>
+	
+	<!-- Text -->
+	<center>
+	<p>Die Tür scheint nicht verschlossen zu sein. Vielleicht finde ich ja etwas nützliches.</p>	  
+	</center>
+	
+	<!-- Notizen -->
+	<center>
+		<iframe src="IFRAME_Notizbuch.html" height="332" width="450" title="Notizen"></iframe>
+	</center>
+
+	<!-- Timer Script einbinden -->	
+	<script src="js/time.js"></script>
+	<!-- Timer Script anzeigen -->	
+	<div id="total-time-left" align="right"> </div> 
+	
+	</div>
+	</div> <!-- ENDE div container -->
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

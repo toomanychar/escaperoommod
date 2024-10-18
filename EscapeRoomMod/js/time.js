@@ -1,13 +1,4 @@
 /* 	
-	Jan-Michael Müller
-	21.05.2022
-	Der Code wurde vom Autor SH4 @b3nsh4 kopiert und an den eigenen Anforderungen angepasst,
-	siehe dazu folgende Quelle: https://github.com/b3nsh4/js-countdown-timer-localstoarge/blob/main/timer.html
-
-	Einbinden des Scripts: 
-	<!-- Timer Script einbinden -->
-	<script src="js/time.js"></script>
-
 	Einbinden des Scripts:
 	<!-- Timer Script einbinden -->
 	<div id="total-time-left" align="right"> </div>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>E.ON IT-Security Escape Room</title> <!-- Tab-Name -->
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	</head>
+	
+	<body>
+	<br><br>
+	<div class="container"> <!-- START div container -->
+	<div class="jumbotron">
+		
+	<!-- E.ON Bild -->
+	<img src="images/eon-logo.svg"> <!-- Quelle: https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/content/general/logo/logo-eon-red.svg -->
+	
+	<br><br><br>
+	
+	<!-- Ab diesem Punkt muss man was ändern, um einen Raum zu gestalten -->
+	
+	<!-- Szene + Navigation -->
+	<center>
+	<!-- Die Szene ist ein zentriertes div mit dem Hintergrund der eigentlichen Szene -->
+	<div class="szene" style="width:1000px; height:500px; background-image:url(images/2/Aussicht.png); background-size: cover"> <!-- Der Hintergrund (also, die Szene) ist die datei images/GRAFIK.png -->
+		<!-- Die Navigation sind absolut positionierte divs, die an ihren jeweiligen Seiten stehen -->
+		<!-- Warum genau dieses Design? Da es funktioniert -->
+		
+		<!-- Von dieser Navigation sollen nur die Richtungen bleiben, die man implementieren möchte. Wenn man z.B. keine Links-Richtung implementieren möchte, sollte man den Links-Knopf von seinem Anfangs-Zeile zu seiner Ende-Zeile löschen -->
+		<div class="navigation" style="right:50%; margin-right: -75px; top:90%; margin-top:-25px"> <!-- Zurück-Knopf Anfang -->
+			<a class="btn btn-primary btn-lg" href="2.2_Links.html" role="button">&#9660; Zurück</a> <!-- Zurück-Knopf führt zur Datei ZURUCK.html -->
+		</div> <!-- Zurück-Knopf Ende -->
+	</div>
+	</center>
+	
+	<br>
+	
+	<!-- Text -->
+	<center>
+	<p>Was für eine schöne Aussicht. Der frische Wind von draußen ist sehr angenehm. Nanu, die Blumen könnten aber auch mal wieder gegossen werden... </p>
+	</center>
+	
+	<!-- Ab diesem Punkt soll man nichts ändern -->
+	
+	<!-- Notizen -->
+	<center>
+		<iframe src="IFRAME_Notizbuch.html" height="332" width="450" title="Notizen"></iframe>
+	</center>
+
+	<!-- Timer Script einbinden -->	
+	<script src="js/time.js"></script>
+	<!-- Timer Script anzeigen -->	
+	<div id="total-time-left" align="right"> </div> 
+	
+	</div>
+	</div> <!-- ENDE div container -->
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
