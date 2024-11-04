@@ -14,6 +14,51 @@
 	<body>
 	<br><br>
 	<div class="container"> <!-- START div container -->
+
+
+
+	<!-- Wenn JavaScript deaktiviert wird, wird eine Fehlermeldung angezeigt, und alle interaktive Objekten werden ausgeschaltet -->
+	<noscript>
+	<h3 class="alert alert-danger">
+	<center>
+	JavaScript ist deaktiviert! <br><br>
+	Um das Escape-Room spielen zu können, müssen Sie JavaScript in den Einstellungen Ihres Browsers für diese Webseite aktivieren!
+	</center>
+	</h3>
+	<style type="text/css">
+		.interactable, .btn, .btn-pac, .navigation {
+			display: none;
+		}
+	</style>
+	<br>
+	</noscript>
+	
+	<!-- Wenn localStorage IRGENDWIE deaktiviert wird, wird diese Fehlermeldung angezeigt -->
+	<h3 class="alert alert-danger" id="localStorageNotifier" style="display:none">
+	<center>
+		localStorage ist deaktiviert! <br><br>
+		Um das Escape-Room spielen zu können, müssen Sie localStorage in den Einstellungen Ihres Browsers für diese Webseite aktivieren!
+	</center>
+	</h3>
+	<script src="js/localStorageCheck.js"></script>
+
+
+	<h3 class="alert alert-warning" id="progressNotifier" style="display:none">
+	<center>
+		Sie haben vorheriges Progress vorhanden. <br>
+		Möchten Sie fortsetzen oder das gesamte Progress löschen? <br><br>
+		
+		<a class="alert alert-success" id="progressFortsetzen" href="">Fortsetzen</a>
+		<button class="alert alert-danger" onclick="resetAllProgress(); location.reload()">⚠ Progress löschen</button>
+		
+	</center>
+	</h3>
+	<script src="js/progressManager.js"></script>
+
+    <script>
+    checkProgress();
+    </script>
+
 	<div class="jumbotron">
 	
 	<!-- E.ON Bild -->

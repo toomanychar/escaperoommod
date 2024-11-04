@@ -10,6 +10,38 @@
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	
+	
+
+
+
+	<!-- Wenn JavaScript deaktiviert wird, wird eine Fehlermeldung angezeigt, und alle interaktive Objekten werden ausgeschaltet -->
+	<noscript>
+	<h3 class="alert alert-danger">
+	<center>
+	JavaScript ist deaktiviert! <br><br>
+	Um das Escape-Room spielen zu können, müssen Sie JavaScript in den Einstellungen Ihres Browsers für diese Webseite aktivieren!
+	</center>
+	</h3>
+	<style type="text/css">
+		.interactable, .btn, .btn-pac, .navigation {
+			display: none;
+		}
+	</style>
+	<br>
+	</noscript>
+	
+	<!-- Wenn localStorage IRGENDWIE deaktiviert wird, wird diese Fehlermeldung angezeigt -->
+	<h3 class="alert alert-danger" id="localStorageNotifier" style="display:none">
+	<center>
+		localStorage ist deaktiviert! <br><br>
+		Um das Escape-Room spielen zu können, müssen Sie localStorage in den Einstellungen Ihres Browsers für diese Webseite aktivieren!
+	</center>
+	</h3>
+	<script src="js/localStorageCheck.js"></script>
+
+
+
 
 <style>
 	#div1, #div2 {
