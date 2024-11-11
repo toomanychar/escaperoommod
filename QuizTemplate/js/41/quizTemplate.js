@@ -35,7 +35,10 @@ function quiz() {
 	var frage = "Was ist meine Lieblingszahl? \n a) 1 \n b) 2 \n c) 3 \n d) 42"; // CHANGE THIS. Second question
 	var antwort = "b"; // CHANGE THIS. Second answer
 	if (askQuestion(vorherigerRaum, zeitVerlustMinuten, frage, antwort)) { return };
-	
+
+	var frage = "Was ist meine Lieblingsauto? \n a) Porsche \n b) Opel \n c) Audi \n d) BWM"; // CHANGE THIS. Second question
+	var antwort = "b"; // CHANGE THIS. Second answer
+	if (askQuestion(vorherigerRaum, zeitVerlustMinuten, frage, antwort)) { return };
 	// Insert more questions using the previous template here.
 	
 	
