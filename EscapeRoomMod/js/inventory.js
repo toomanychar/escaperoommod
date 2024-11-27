@@ -9,6 +9,9 @@
 
 // Create a completely empty inventory
 function initializeInventory() {
+	if (window.localStorage.getItem("invSlot_0")) {
+		throw new Error("The inventory is already initialized, the function initializeInventory shouldn't be called")
+	}
 	for (let i = 0; i < 24; i++) {
 		window.localStorage.setItem("invSlot_" + i, "0 0");
 	}
@@ -34,7 +37,7 @@ function isInInventory(id, anzahl) {
 		slot = window.localStorage.getItem("invSlot_" + i).split(' ');
 		slot_id = slot[0];
 		slot_anzahl = slot[1];
-		if (slot_id == id) && (slot_anzahl >= anzahl) {
+		if ((slot_id == id) && (slot_anzahl >= anzahl)) {
 			return true;
 		}
 	}
@@ -63,7 +66,7 @@ function indexOfObjectInInventory(id) {
 function addToInventory(id, anzahl) {
 	var index; // the index, where the object [id] will be added
 	// if the object is already in the inventory in some amount, add [anzahl] to that amount and return true
-	if isInInventory(id, 1) {
+	if (isInInventory(id, 1)) {
 		// add to the existing slot of the object
 		// find index of object [id] in the inventory
 		index = indexOfObjectInInventory(id);
@@ -75,7 +78,7 @@ function addToInventory(id, anzahl) {
 	}
 	
 	// if the inventory doesn't contain object [id] and its full, throw an error and return false.
-	if isInventoryFull() {
+	if (isInventoryFull()) {
 		throw new Error("Object " + id + " can't be added to inventory, because it isn't in the inventory and the inventory is full. Use isInventoryFull() to avoid this error.");
 		return false;
 	}
@@ -87,10 +90,12 @@ function addToInventory(id, anzahl) {
 }
 
 function removeFromInventory(id, anzahl) {
-	if (!isInInventory(id, anzahl)) {
+	if (!isInInventory(id, anzahl)) { // if the object isn't in the inventory in the necessary amount, throw an error
 		throw new Error("Object " + id + " can't be removed from inventory, because it isn't there in sufficient amounts. Use isInInventory(id, anzahl) to check whether the object is in inventory beforehand.");
 		return false;
 	}
+	
+	// the object is in the inventory in the necessary amount
 	
 	var index = indexOfObjectInInventory(id);
 	
@@ -99,16 +104,18 @@ function removeFromInventory(id, anzahl) {
 	
 	var new_anzahl = Number(slot_anzahl) - Number(anzahl);
 	
-	if new_anzahl > 0 {
+	if (new_anzahl > 0) { // if removing anzahl instances of object from inventory doesn't remove all of it, just write the new amount of this object into the same slot
 		window.localStorage.setItem("invSlot_" + index, id + " " + new_anzahl);
 		return true;
 	}
-		
+	
+	// there should be nothing in the slot index in the inventory
+	
 	window.localStorage.setItem("invSlot_" + index, "0 0");
 
 	// shift the entire inventory starting from index [index+1] one to the left, and set the last value to "0 0", so that the empty slot travels to the first empty spot
 	// reasoning behind this: TODO
-	for (int i = Number(index)+1; i < 24; i++) {
+	for (let i = Number(index)+1; i < 24; i++) {
 		window.localStorage.setItem("invSlot_" + (i-1), window.localStorage.getItem("invSlot_" + i));
 	}
 	window.localStorage.setItem("invSlot_" + (24-1), "0 0")

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Inventory</title> <!-- Tab-Name -->
+	
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <body>
+
+    <!-- Wenn JavaScript deaktiviert wird, wird das Inventory ausgeschaltet -->
+    <noscript>
+    <style type="text/css">
+		.interactable {
+			display: none;
+		}
+    </style>
+    </noscript>
+    
+
+	</center>
+	<!-- Inventory Script einbinden -->
+	<script src="js/inventory.js"></script>
+
+	<style type="text/css">
+	.inventory {
+		background-color: rgb(64, 70, 76);
+		display: inline-grid;
+		grid-template-columns: 6;
+		grid-template-rows: 4;
+		gap: 13.6px;
+		padding: 9.6px;
+	}
+	.invSlot {
+		width: 178.4px;
+		height: 178.4px;
+		background-image: URL("images/inventorySlot.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		display: grid;
+	}
+		
+	.invItem {
+		background-image: URL("");
+		background-size:cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		margin:18.4px;
+	}
+	
+	.invItem:hover {
+		cursor: pointer;
+	}
+	
+	.itemMenu {
+		background-color: rgb(64, 70, 76);
+		border-bottom: 4px solid rgb(27, 47, 49);
+		padding:9.6px;
+		height: 200px;
+		
+		display: flex;		
+		flex-direction: row;
+	}
+	
+	.inv {
+		background-color: rgb(64, 70, 76);
+		border: 4px solid rgb(27, 47, 49);
+		width: fit-content;
+		height: fit-content;
+	}
+	
+	.itemPreviewBox {
+		background-color: rgb(224, 224, 233);
+		width: 178.4px;
+		height: 178.4px;
+		border-radius: 10px;
+		border: 3px solid rgb(27, 47, 49);
+	}
+	
+	.itemPreview {
+		background-image: url("");
+		background-size:cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		margin:5px;
+	}
+	
+	.itemNameAmountUseBox {
+		margin:5px;
+		width: 200px;
+		position: relative;
+	}
+	
+	.itemName {
+		
+	}
+	
+	.itemAmount {
+		
+	}
+	
+	.itemUse {
+		position: absolute;
+		bottom: 0;
+		left:0;
+		right:0;
+
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+	
+	.itemDescription {
+		background-color: blue;
+		width: 200px;
+		flex-grow: 100;
+	}
+	
+	.itemUseConsequence {
+		width: 200px;
+		background-color: pink;
+	}
+	
+	</style>
+	<div class="interactable inv">
+		<div class="interactable itemMenu">
+			<div class="itemPreviewBox">
+				<div class="itemPreview">
+				</div>
+			</div>
+			
+			<div class="itemNameAmountUseBox">
+				<center>
+					<div class="itemName">Name</div>
+				</center>
+				<center>
+					<div class="itemAmount">Anzahl</div>
+				</center>
+				<button class="itemUse btn btn-primary" onclick="useCurrentlySelectedItem()">Nutzen</button>
+			</div>
+			
+			<div class="itemDescription"> Text Text </div>
+			
+			<div class="itemUseConsequence">Text Text</div>
+		</div>
+		
+		<div class="interactable inventory" id="inventory">
+			<div class="interactable invSlot" id="invSlot_0" style="grid-row:1;grid-column:1">
+				<div class="interactable invItem" id="invItem_0" onclick="selectSlot(0)"></div></div>
+			<div class="interactable invSlot" id="invSlot_1" style="grid-row:1;grid-column:2">
+				<div class="interactable invItem" id="invItem_1" onclick="selectSlot(1)"></div></div>
+			<div class="interactable invSlot" id="invSlot_2" style="grid-row:1;grid-column:3">
+				<div class="interactable invItem" id="invItem_2" onclick="selectSlot(2)"></div></div>
+			<div class="interactable invSlot" id="invSlot_3" style="grid-row:1;grid-column:4">
+				<div class="interactable invItem" id="invItem_3" onclick="selectSlot(3)"></div></div>
+			<div class="interactable invSlot" id="invSlot_4" style="grid-row:1;grid-column:5">
+				<div class="interactable invItem" id="invItem_4" onclick="selectSlot(4)"></div></div>
+			<div class="interactable invSlot" id="invSlot_5" style="grid-row:1;grid-column:6">
+				<div class="interactable invItem" id="invItem_5" onclick="selectSlot(5)"></div></div>
+
+			<div class="interactable invSlot" id="invSlot_6" style="grid-row:2;grid-column:1">
+				<div class="interactable invItem" id="invItem_6" onclick="selectSlot(6)"></div></div>
+			<div class="interactable invSlot" id="invSlot_7" style="grid-row:2;grid-column:2">
+				<div class="interactable invItem" id="invItem_7" onclick="selectSlot(7)"></div></div>
+			<div class="interactable invSlot" id="invSlot_8" style="grid-row:2;grid-column:3">
+				<div class="interactable invItem" id="invItem_8" onclick="selectSlot(8)"></div></div>
+			<div class="interactable invSlot" id="invSlot_9" style="grid-row:2;grid-column:4">
+				<div class="interactable invItem" id="invItem_9" onclick="selectSlot(9)"></div></div>
+			<div class="interactable invSlot" id="invSlot_10" style="grid-row:2;grid-column:5">
+				<div class="interactable invItem" id="invItem_10" onclick="selectSlot(10)"></div></div>
+			<div class="interactable invSlot" id="invSlot_11" style="grid-row:2;grid-column:6">
+				<div class="interactable invItem" id="invItem_11" onclick="selectSlot(11)"></div></div>
+
+			<div class="interactable invSlot" id="invSlot_12" style="grid-row:3;grid-column:1">
+				<div class="interactable invItem" id="invItem_12" onclick="selectSlot(12)"></div></div>
+			<div class="interactable invSlot" id="invSlot_13" style="grid-row:3;grid-column:2">
+				<div class="interactable invItem" id="invItem_13" onclick="selectSlot(13)"></div></div>
+			<div class="interactable invSlot" id="invSlot_14" style="grid-row:3;grid-column:3">
+				<div class="interactable invItem" id="invItem_14" onclick="selectSlot(14)"></div></div>
+			<div class="interactable invSlot" id="invSlot_15" style="grid-row:3;grid-column:4">
+				<div class="interactable invItem" id="invItem_15" onclick="selectSlot(15)"></div></div>
+			<div class="interactable invSlot" id="invSlot_16" style="grid-row:3;grid-column:5">
+				<div class="interactable invItem" id="invItem_16" onclick="selectSlot(16)"></div></div>
+			<div class="interactable invSlot" id="invSlot_17" style="grid-row:3;grid-column:6">
+				<div class="interactable invItem" id="invItem_17" onclick="selectSlot(17)"></div></div>
+
+			<div class="interactable invSlot" id="invSlot_18" style="grid-row:4;grid-column:1">
+				<div class="interactable invItem" id="invItem_18" onclick="selectSlot(18)"></div></div>
+			<div class="interactable invSlot" id="invSlot_19" style="grid-row:4;grid-column:2">
+				<div class="interactable invItem" id="invItem_19" onclick="selectSlot(19)"></div></div>
+			<div class="interactable invSlot" id="invSlot_20" style="grid-row:4;grid-column:3">
+				<div class="interactable invItem" id="invItem_20" onclick="selectSlot(20)"></div></div>
+			<div class="interactable invSlot" id="invSlot_21" style="grid-row:4;grid-column:4">
+				<div class="interactable invItem" id="invItem_21" onclick="selectSlot(21)"></div></div>
+			<div class="interactable invSlot" id="invSlot_22" style="grid-row:4;grid-column:5">
+				<div class="interactable invItem" id="invItem_22" onclick="selectSlot(22)"></div></div>
+			<div class="interactable invSlot" id="invSlot_23" style="grid-row:4;grid-column:6">
+				<div class="interactable invItem" id="invItem_23" onclick="selectSlot(23)"></div></div>
+		</div>
+		
+
+	</div>
+	
+	<script>
+	unSelectCurrentSlot()
+	</script>
+	
+	
+	</body>
+	</head>
+</html>

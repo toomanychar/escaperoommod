@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3x3 Puzzle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        #puzzle {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+        }
+
+        .tile {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgray;
+            font-size: 24px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .empty {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="puzzle"></div>
+
+    <script>
+        const puzzleSize = 3;
+        const puzzleContainer = document.getElementById('puzzle');
+
+        let tiles = [];
+        let emptyTileIndex = puzzleSize * puzzleSize - 1;
+
+        // Initialisierung des Puzzles
+        function initializePuzzle() {
+            tiles = [];
+            for (let i = 1; i <= puzzleSize * puzzleSize - 1; i++) {
+                tiles.push(i);
+            }
+            tiles.push(null); // Das leere Feld ist 'null'
+            shufflePuzzle();
+            renderPuzzle();
+        }
+
+        // Zufälliges Mischen der Kacheln, bis eine lösbare Konfiguration gefunden wurde
+        function shufflePuzzle() {
+            let solvable = false;
+            while (!solvable) {
+                // Mischen der Kacheln
+                for (let i = tiles.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+                }
+                // Überprüfen, ob das Puzzle lösbar ist
+                solvable = isSolvable(tiles);
+            }
+        }
+
+        // Überprüfen, ob das Puzzle lösbar ist
+        function isSolvable(tiles) {
+            let inversions = 0;
+            const flattenedTiles = tiles.filter(t => t !== null); // Leeres Feld herausfiltern
+            for (let i = 0; i < flattenedTiles.length; i++) {
+                for (let j = i + 1; j < flattenedTiles.length; j++) {
+                    if (flattenedTiles[i] > flattenedTiles[j]) {
+                        inversions++;
+                    }
+                }
+            }
+            // Ein Puzzle ist lösbar, wenn die Anzahl der Inversionen gerade ist
+            return inversions % 2 === 0;
+        }
+
+        // Puzzle rendern
+        function renderPuzzle() {
+            puzzleContainer.innerHTML = '';
+            tiles.forEach((tile, index) => {
+                const tileElement = document.createElement('div');
+                tileElement.classList.add('tile');
+                if (tile === null) {
+                    tileElement.classList.add('empty');
+                } else {
+                    tileElement.textContent = tile;
+                    tileElement.addEventListener('click', () => handleTileClick(index));
+                }
+                puzzleContainer.appendChild(tileElement);
+            });
+        }
+
+        // Kachel anklicken
+        function handleTileClick(index) {
+            const emptyIndex = tiles.indexOf(null);
+            const validMoves = [
+                emptyIndex - 1, emptyIndex + 1, emptyIndex - puzzleSize, emptyIndex + puzzleSize
+            ];
+
+            if (validMoves.includes(index)) {
+                tiles[emptyIndex] = tiles[index];
+                tiles[index] = null;
+                renderPuzzle();
+                checkWin();
+            }
+        }
+
+        // Überprüfen, ob das Puzzle gelöst wurde
+        function checkWin() {
+            for (let i = 0; i < tiles.length - 1; i++) {
+                if (tiles[i] !== i + 1) {
+                    return;
+                }
+            }
+            alert('Herzlichen Glückwunsch, Sie haben das Puzzle gelöst!');
+        }
+
+        // Puzzle initialisieren
+        initializePuzzle();
+    </script>
+
+</body>
+</html>
