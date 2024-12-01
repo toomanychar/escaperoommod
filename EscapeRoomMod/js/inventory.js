@@ -3,18 +3,29 @@
 // if there are no free slots left, you can't take any more objects
 // TODO: can you drop items?
 
+// itemListing consist of following arrays: [id, "Name", "Description", "path/to/image/of/item.png", "This text will show up when you use this item"]
 // Item IDs:
 // 0 - Empty
 // 1 - Kaffeebohne
+const itemListing = []
+itemListing.push([0, "", "", "", ""])
+itemListing.push([1, "Kaffeebohne", "Eine Kaffeebohne. Wenn ich es verzerren würde, hätte ich mehr Zeit. Eine Kaffee wäre aber viel schöner...", "images/kaffeebohne.png", "Sie haben die Kaffeebohne verzerrt. +5 min"])
+// Kaffeebohne Image Quelle: https://similarpng.com/coffee-bean-isolated-on-transparent-background-png/
 
 // Create a completely empty inventory
 function initializeInventory() {
 	if (window.localStorage.getItem("invSlot_0")) {
 		throw new Error("The inventory is already initialized, the function initializeInventory shouldn't be called")
 	}
+
 	for (let i = 0; i < 24; i++) {
 		window.localStorage.setItem("invSlot_" + i, "0 0");
 	}
+}
+
+// Get item at index i in the inventory
+function itemAtIndex(i) {
+	return window.localStorage.getItem("invSlot_" + i).split(' ');
 }
 
 // check if inventory is full. if it is, return true, otherwise return false
@@ -123,3 +134,100 @@ function removeFromInventory(id, anzahl) {
 	return true;
 }
 
+
+function unSelectCurrentSlot() {
+	slotSelected = window.localStorage.getItem("invSlotSelected");
+	if (slotSelected) {
+		document.getElementById("invSlot_" + window.localStorage.getItem("invSlotSelected")).style.backgroundImage = "url(images/inventorySlot.png)"
+	}
+	
+	window.localStorage.removeItem("invSlotSelected")
+	// Remove slot image, amount, description of the previously selected item
+	document.getElementById("itemPreview").style.backgroundImage = "url('')"
+	document.getElementById("itemName").innerHTML = ""
+	document.getElementById("itemAmount").innerHTML = ""
+	document.getElementById("itemDescText").innerHTML = ""
+
+	document.getElementById("itemUse").disabled = true;
+}
+
+function selectSlot(id) {
+	if (!(document.getElementById("invSlot_" + id).style.backgroundImage == 'url("images/inventorySlotSelected.png")')) {
+		unSelectCurrentSlot()
+		document.getElementById("invSlot_" + id).style.backgroundImage = "url(images/inventorySlotSelected.png)"
+		window.localStorage.setItem("invSlotSelected", id)
+		
+		
+		// Add slot image, amount, description of the currently selected item
+		item = itemAtIndex(id)
+		itemId = item[0]
+		itemAnzahl = item[1]
+		itemInfo = itemListing[itemId]
+		itemName = itemInfo[1]
+		itemDesc = itemInfo[2]
+		itemImage = itemInfo[3]
+		if (itemImage.length > 0) {
+			document.getElementById("itemPreview").style.backgroundImage = "url('" + itemImage + "')"
+		}
+		document.getElementById("itemName").innerHTML = itemName
+		if (itemAnzahl > 0) { 
+			document.getElementById("itemAmount").innerHTML = itemAnzahl + " Stück" 
+		}
+		document.getElementById("itemDescText").innerHTML = itemDesc
+		
+		document.getElementById("itemUse").disabled = false;
+	} else {
+		unSelectCurrentSlot()
+	}
+	
+}
+
+function renderInventory() {
+	for (let i = 0; i < 24; i++) {
+		slot = window.localStorage.getItem("invSlot_" + i).split(' ');
+		slot_id = slot[0];
+		slot_anzahl = slot[1]
+		itemImage = itemListing[slot_id][3]
+		
+		document.getElementById("invItem_" + i).style.backgroundImage = "url('" + itemImage + "')"
+	}
+}
+
+function useCurrentlySelectedItem() {
+	selectedId = window.localStorage.getItem("invSlotSelected")
+	selectedItem = itemAtIndex(selectedId)
+	itemId = selectedItem[0]
+	itemAnzahl = selectedItem[1]
+
+	itemInfo = itemListing[itemId]
+	itemUseConsequence = itemInfo[4]
+	if (itemUseConsequence.length > 0) {
+		switch (itemId) {
+			case 1:
+				// Add time to the timer
+				// TODO
+				
+				console.log("Testing test")
+				removeFromInventory(1, 1)
+				document.getElementById("itemAmount").innerHTML = (itemAnzahl - 1) + " Stück"
+				if (itemAnzahl == 1) {
+					unSelectCurrentSlot()
+				}
+				break
+			default:
+				removeFromInventory(itemId, 1)
+				document.getElementById("itemAmount").innerHTML = (itemAnzahl - 1) + " Stück"
+				if (itemAnzahl == 1) {
+					unSelectCurrentSlot()
+				}
+		}
+		
+		document.getElementById("itemUseConsequence").innerHTML = itemUseConsequence
+		
+		renderInventory()
+	} else {
+		document.getElementById("itemUseConsequence").innerHTML = "Sie können dieses Objekt nicht nutzen."
+	}
+	
+	renderInventory()
+}

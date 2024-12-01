@@ -5,6 +5,7 @@ function checkProgress() {
 	if (room) {
 		document.getElementById("progressNotifier").style.display = "";
 		document.getElementById("progressFortsetzen").href = room;
+		document.getElementById("disableThisIfProgress").style.display = "none";
 	}
 }
 

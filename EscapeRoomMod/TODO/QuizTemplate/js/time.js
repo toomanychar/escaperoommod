@@ -1,12 +1,8 @@
-/*
-    Einbinden des Scripts:
-
-	<!-- Timer Script einbinden -->	
-	<script src="js/time.js"></script>
-	<!-- Timer Script anzeigen -->	
-	<div id="total-time-left" align="right"> </div> 
+/* 	
+	Einbinden des Scripts:
+	<!-- Timer Script einbinden -->
+	<div id="total-time-left" align="right"> </div>
 */	
-
 
 
 if(localStorage.getItem("count_timer")){

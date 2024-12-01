@@ -46,7 +46,10 @@
     <script>
         const puzzleSize = 3;
         const puzzleContainer = document.getElementById('puzzle');
-
+		
+		puzzleContainer.style.gridTemplateColumns = "repeat(" + puzzleSize + ", 100px)"
+		puzzleContainer.style.gridTemplateRows = "repeat(" + puzzleSize + ", 100px)"
+		
         let tiles = [];
         let emptyTileIndex = puzzleSize * puzzleSize - 1;
 
