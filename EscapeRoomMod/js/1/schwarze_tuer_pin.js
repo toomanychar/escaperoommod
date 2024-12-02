@@ -4,6 +4,6 @@ var eingabe = window.prompt("Bitte PIN eingeben","");
 if(eingabe != pin) {
 alert("Falscher PIN!");
 } else {
-document.location.href="6.1_Raum-Schwarz.html";
+document.location.href="6.1_Anfang.html";
 }
 }
