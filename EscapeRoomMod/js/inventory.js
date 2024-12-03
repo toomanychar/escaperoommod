@@ -7,9 +7,11 @@
 // Item IDs:
 // 0 - Empty
 // 1 - Kaffeebohne
+// 2 - Kassette
 const itemListing = []
 itemListing.push([0, "", "", "", ""])
-itemListing.push([1, "Kaffeebohne", "Eine Kaffeebohne. Wenn ich es verzerren würde, hätte ich mehr Zeit. Eine Kaffee wäre aber viel schöner...", "images/kaffeebohne.png", "Sie haben die Kaffeebohne verzerrt. +5 min"])
+itemListing.push([1, "Kaffeebohne", "Kaffeebohnen! Wenn ich diese essen würde, würde ich mehr Zeit bekommen. Ein Kaffee wäre aber viel schöner...", "images/kaffeebohne.png", "Sie haben die Kaffeebohne verzerrt. +5 min"])
+itemListing.push([2, "Kassette", "Eine merkwürdige Kassette, die ich in dem Serverraum gefunden habe. TextTextText", "images/Kassette.png", ""])
 // Kaffeebohne Image Quelle: https://similarpng.com/coffee-bean-isolated-on-transparent-background-png/
 
 // Create a completely empty inventory
@@ -203,11 +205,12 @@ function useCurrentlySelectedItem() {
 	itemUseConsequence = itemInfo[4]
 	if (itemUseConsequence.length > 0) {
 		switch (itemId) {
-			case 1:
+			case "1":
 				// Add time to the timer
-				// TODO
+				var count_timer = Number(window.localStorage.getItem("count_timer"));
+				count_timer = count_timer + (5*60)
+				window.localStorage.setItem("count_timer", count_timer)
 				
-				console.log("Testing test")
 				removeFromInventory(1, 1)
 				document.getElementById("itemAmount").innerHTML = (itemAnzahl - 1) + " Stück"
 				if (itemAnzahl == 1) {
