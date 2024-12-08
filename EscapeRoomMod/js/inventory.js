@@ -3,6 +3,8 @@
 // if there are no free slots left, you can't take any more objects
 // TODO: can you drop items?
 
+console.log("Inventory.js loaded")
+
 // itemListing consist of following arrays: [id, "Name", "Description", "path/to/image/of/item.png", "This text will show up when you use this item"]
 // Item IDs:
 // 0 - Empty
@@ -10,14 +12,14 @@
 // 2 - Kassette
 const itemListing = []
 itemListing.push([0, "", "", "", ""])
-itemListing.push([1, "Kaffeebohne", "Kaffeebohnen! Wenn ich diese essen würde, würde ich mehr Zeit bekommen. Ein Kaffee wäre aber viel schöner...", "images/kaffeebohne.png", "Sie haben die Kaffeebohne verzerrt. +5 min"])
-itemListing.push([2, "Kassette", "Eine merkwürdige Kassette, die ich in dem Serverraum gefunden habe. TextTextText", "images/Kassette.png", ""])
+itemListing.push([1, "Kaffeebohne", "Kaffeebohnen! Wenn ich diese essen würde, würde ich mehr Zeit bekommen. Eine Kaffee wäre aber viel schöner...", "images/kaffeebohne.png", "Sie haben die Kaffeebohne verzerrt. +5 min"])
+itemListing.push([2, "Kassette", "Eine merkwürdige Kassette, die ich in dem Serverraum gefunden habe. Wo könnte ich diese wohl abspielen?", "images/Kassette.png", ""])
 // Kaffeebohne Image Quelle: https://similarpng.com/coffee-bean-isolated-on-transparent-background-png/
 
 // Create a completely empty inventory
 function initializeInventory() {
 	if (window.localStorage.getItem("invSlot_0")) {
-		throw new Error("The inventory is already initialized, the function initializeInventory shouldn't be called")
+		return;
 	}
 
 	for (let i = 0; i < 24; i++) {
@@ -216,6 +218,7 @@ function useCurrentlySelectedItem() {
 				if (itemAnzahl == 1) {
 					unSelectCurrentSlot()
 				}
+//				parent.location.reload()
 				break
 			default:
 				removeFromInventory(itemId, 1)

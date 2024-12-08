@@ -26,7 +26,7 @@ function countDownTimer(){
     document.getElementById("total-time-left").innerHTML = "Übrige Zeit: "+minutes+" Minutes "+seconds+" Seconds";
     if(count_timer <= 0){
          localStorage.clear("count_timer");
-		 document.location.href="7.1_EndeGescheitert.html"; // TODO
+		 document.location.href="100.1_EndeGescheitert.html"; // TODO
     } else {
         count_timer = count_timer -1 ;
         minutes = parseInt(count_timer/60);

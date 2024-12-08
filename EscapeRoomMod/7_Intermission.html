@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>E.ON IT-Security Escape Room</title> <!-- Tab-Name -->
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	</head>
+
+	<body style="background-color:black;">
+
+	<!-- Progress Manager -->
+	<script src="js/progressManager.js"></script>
+	<script>
+	setProgress("7_Intermission.html")
+	</script>
+	
+	<center>
+	<video controls style="height:98vh" id="intermission">
+		<source src="videos/intermission.mp4" type="video/mp4">
+	</video>
+
+	<script>
+	var vid = document.getElementById("intermission"); 
+	vid.onended = function() {
+		document.getElementById("button").style.display = "inline"
+	};
+	</script>
+
+	<br><br>
+	<a class="btn btn-primary btn-lg" href="7.1_VR.html" role="button" style="display:none" id="button">Weiter</a>
+	</center>
+
+	</body>
+</html>

@@ -13,6 +13,12 @@ function setProgress(room) {
 	window.localStorage.setItem("progress", room);
 }
 
+function newSetProgress() {
+	var path = window.location.pathname;
+	var room = path.split("/").pop();
+	window.localStorage.setItem("progress", room)
+}
+
 
 function resetAllProgress() {
 	window.localStorage.clear();

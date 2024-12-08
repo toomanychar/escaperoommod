@@ -10,8 +10,9 @@
 	
 	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/inventory.css" rel="stylesheet">
     
-    <body>
+    <body style="background-color: rgb(64, 70, 76)">
 
     <!-- Wenn JavaScript deaktiviert wird, wird das Inventory ausgeschaltet -->
     <noscript>
@@ -33,12 +34,12 @@
 		display: inline-grid;
 		grid-template-columns: 6;
 		grid-template-rows: 4;
-		gap: 13.6px;
-		padding: 9.6px;
+		gap: 0.8vw;
+		padding: 0.6vw;
 	}
 	.invSlot {
-		width: 178.4px;
-		height: 178.4px;
+		width: 11.4vw;
+		height: 11.4vw;
 		background-image: URL("images/inventorySlot.png");
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -49,7 +50,7 @@
 	.invItem {
 		background-image: URL("");
 		background-size:cover;
-		margin:18.4px;
+		margin:1.17vw;
 	}
 	
 	.invItem:hover {
@@ -58,27 +59,27 @@
 	
 	.itemMenu {
 		background-color: rgb(64, 70, 76);
-		border-bottom: 4px solid rgb(27, 47, 49);
-		padding:9.6px;
-		height: 200px;
+		border-bottom: 0.24vw solid rgb(27, 47, 49);
+		padding:0.5vw;
+		height: 12.5vw;
 		
-		display: flex;		
+		display: flex;
 		flex-direction: row;
 	}
 	
 	.inv {
 		background-color: rgb(64, 70, 76);
-		border: 4px solid rgb(27, 47, 49);
+		border: 0.24vw solid rgb(27, 47, 49);
 		width: fit-content;
 		height: fit-content;
 	}
 	
 	.itemPreviewBox {
 		background-color: rgb(224, 224, 233);
-		width: 178.4px;
-		height: 178.4px;
-		border-radius: 10px;
-		border: 3px solid rgb(27, 47, 49);
+		width: 11.45vw;
+		height: 11.45vw;
+		border-radius: 0.63vw;
+		border: 0.18vw solid rgb(27, 47, 49);
 	}
 	
 	.itemPreview {
@@ -89,25 +90,27 @@
 	}
 	
 	.itemNameAmountUseBox {
-		margin:5px;
-		width: 180px;
+		margin: 0.31vw;
+		width: 11.53vw;
 		position: relative;
 	}
 	
 	.itemName {
+		font-size: 1.5vw;
 		color: white;
 		word-wrap: break-word 
 	}
 	
 	.itemAmount {
+		font-size: 1.1vw;
 		color: white;
 	}
 	
 	.itemUse {
 		position: absolute;
 		bottom: 0;
-		left:0;
-		right:0;
+		left: 0;
+		right: 0;
 
 		margin-left: 10%;
 		margin-right: 10%;
@@ -115,26 +118,28 @@
 	
 	.itemDescription {
 		background-color: rgb(224, 224, 233);
-		border: 3px solid rgb(27, 47, 49);
-		width: 200px;
+		border: 0.18vw solid rgb(27, 47, 49);
+		width: 12.84vw;
 		flex-grow: 100;
-		border-radius: 10px;
+		border-radius: 0.64vw;
 	}
 	
 	.itemDescText {
-		margin-left: 5px;
+		margin-left: 0.31vw;
 		color: black;
+		font-size:1.2vw
 	}
 	
 	.itemUseConsequence {
-		width: 350px;
+		width: 22.47vw;
 		background-color: rgb(224, 224, 233);
-		border: 3px solid rgb(27, 47, 49);
-		border-radius: 10px;
-		padding: 3px
+		border: 0.18vw solid rgb(27, 47, 49);
+		border-radius: 0.63vw;
+		padding: 0.18vw;
+		font-size: 1.2vw;
 	}
-	
 	</style>
+	
 	<div class="interactable inv">
 		<div class="interactable itemMenu">
 			<div class="itemPreviewBox">
@@ -209,10 +214,7 @@
 				<div class="interactable invItem" id="invItem_22" onclick="selectSlot(22)"></div></div>
 			<div class="interactable invSlot" id="invSlot_23" style="grid-row:3;grid-column:8">
 				<div class="interactable invItem" id="invItem_23" onclick="selectSlot(23)"></div></div>
-
 		</div>
-		
-
 	</div>
 	
 	<script>
