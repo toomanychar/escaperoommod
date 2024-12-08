@@ -1,0 +1,73 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: url('BGPH_01.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .modal {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .text-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #f0f0f0;
+  }
+  
+  .counter {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+  }
+  
+  .monster {
+    position: absolute;
+    width: 100px; /* Visible image size */
+    height: 100px; /* Visible image size */
+    cursor: pointer;
+    padding: 20px; /* Increases the clickable area */
+    box-sizing: content-box; /* Ensures padding is outside the image area */
+  }
+  
+  .arrows {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .arrow {
+    padding: 15px 30px;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Mini-Game</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      background: url('BackgroundExample.jpg') no-repeat center center;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+    canvas {
+      background: #333;
+      display: block;
+      border: 2px solid #555;
+    }
+    #score {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 20px;
+      color: green;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <div id="score">Score: 0</div>
+  <div>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+    const scoreEl = document.getElementById("score");
+    const messageEl = document.getElementById("message");
+
+    const box = 20; // Size of each square
+    const canvasSize = canvas.width / box; // Number of squares in each dimension
+    let snake, food, direction, score;
+    const targetScore = 10;
+
+    function resetGame() {
+      snake = [{ x: 10, y: 10 }];
+      food = { x: Math.floor(Math.random() * canvasSize), y: Math.floor(Math.random() * canvasSize) };
+      direction = null;
+      score = 0;
+      scoreEl.textContent = `Score: ${score}`;
+      messageEl.textContent = "";
+    }
+
+    // Control snake movement
+    document.addEventListener("keydown", event => {
+      switch (event.key.toLowerCase()) {
+        case "w":
+          if (direction !== "down") direction = "up";
+          break;
+        case "a":
+          if (direction !== "right") direction = "left";
+          break;
+        case "s":
+          if (direction !== "up") direction = "down";
+          break;
+        case "d":
+          if (direction !== "left") direction = "right";
+          break;
+      }
+    });
+
+    function drawSquare(x, y, color) {
+      ctx.fillStyle = color;
+      ctx.fillRect(x * box, y * box, box, box);
+      ctx.strokeStyle = "#000";
+      ctx.strokeRect(x * box, y * box, box, box);
+    }
+
+    function draw() {
+      if (score >= targetScore) {
+        clearInterval(game);
+        messageEl.textContent = "You succeed!";
+        return;
+      }
+
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Update score
+      scoreEl.textContent = `Score: ${score}`;
+
+      // Draw food
+      drawSquare(food.x, food.y, "red");
+
+      // Draw snake
+      for (let segment of snake) {
+        drawSquare(segment.x, segment.y, "lime");
+      }
+
+      if (direction) {
+        // Move snake
+        const head = { ...snake[0] };
+        if (direction === "up") head.y -= 1;
+        if (direction === "down") head.y += 1;
+        if (direction === "left") head.x -= 1;
+        if (direction === "right") head.x += 1;
+
+        // Check for collisions
+        if (
+          head.x < 0 ||
+          head.y < 0 ||
+          head.x >= canvasSize ||
+          head.y >= canvasSize ||
+          snake.some(segment => segment.x === head.x && segment.y === head.y)
+        ) {
+          clearInterval(game);
+          messageEl.textContent = "You failed! Try again!";
+          setTimeout(() => {
+            resetGame();
+            game = setInterval(draw, 100);
+          }, 2000);
+          return;
+        }
+
+        snake.unshift(head);
+
+        // Check if food is eaten
+        if (head.x === food.x && head.y === food.y) {
+          score++;
+          food = { x: Math.floor(Math.random() * canvasSize), y: Math.floor(Math.random() * canvasSize) };
+        } else {
+          snake.pop();
+        }
+      }
+    }
+
+    resetGame();
+    let game = setInterval(draw, 100);
+  </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+/* Grundlegendes Styling für die Seite */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/background_chess_riddle2.webp'); /* Pfad zum Bild */
+    background-size: cover; /* Bildgröße an den Viewport anpassen */
+    background-repeat: no-repeat; /* Wiederholung des Bildes verhindern */
+}
+
+.chess-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-labels, .right-labels {
+    display: flex;
+    color: #f0d9b5;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 560px; /* Anpassen an die Höhe des Schachbretts */
+    padding: 0 10px;
+}
+
+.top-labels, .bottom-labels {
+    display: flex;
+    color: #f0d9b5;
+    justify-content: space-around;
+    width: 560px; /* Anpassen an die Breite des Schachbretts */
+    padding: 10px 0;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Schachbrett Styling */ 
+#board { 
+    position: relative; /* Add this line */ 
+    display: grid; 
+    grid-template-columns: repeat(8, 80px); 
+    grid-template-rows: repeat(8, 80px); 
+    gap: 0; 
+    margin: 20px auto; 
+    border: 15px solid black; 
+    width: 640px; /* 8x80px für das Schachbrett */ 
+    height: 640px; 
+}
+
+#riddle-title {
+    font-size: 2.0rem;
+    color: #f0d9b5;  /* Helle Farbe, passend zum Schachbrett */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Schattierung für bessere Lesbarkeit */
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);  /* Halbtransparenter Hintergrund */
+    border-radius: 10px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styling für die einzelnen Felder des Schachbretts */
+.square {
+    width: 80px; /* Gleiche Breite wie die Gitterzellen */
+    height: 80px; /* Gleiche Höhe wie die Gitterzellen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Weißes Feld */
+.white {
+    background-color: #f0d9b5;
+}
+
+/* Schwarzes Feld */
+.black {
+    background-color: #b58863;
+}
+
+/* Styling für die Schachfiguren */
+.piece {
+    width: 65px; /* Etwas kleiner als die Felder, um Platz zu lassen */
+    height: 65px; /* Etwas kleiner als die Felder, um Platz zu lassen */
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;  /* Ermöglicht das Klicken auf die Figur */
+}
+
+/* Visualisierung während des Ziehens */
+.piece.dragging {
+    opacity: 0.5;
+}
+
+
+/* Für das Schachbrett direkt unter der Überschrift */
+h1 {
+    color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+/* Die Meldungen */
+#message_solved, #message_wrong_move {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    margin: 0; 
+    padding: 10px;
+    display: none; 
+    z-index: 1000; 
+    font-weight: bold; 
+    font-size: 16px; 
+    width: 80%; 
+    max-width: 640px;
+    text-align: center; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 5px; 
+}
+
+/* Erfolgsmeldung */
+#message_solved {
+    color: #00ff00; /* Grün für Erfolgsmeldungen */
+}
+
+/* Fehlermeldung */
+#message_wrong_move {
+    color: #ff0000; /* Rot für Fehlermeldungen */
+}
+
+

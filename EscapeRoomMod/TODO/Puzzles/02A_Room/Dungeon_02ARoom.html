@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to The Dungeon</title>
+  <link rel="stylesheet" href="Dungeon_02ARoom_Style.css">
+</head>
+<body>
+  <div class="modal" id="modal">
+    <h1>Welcome to The Dungeon</h1>
+    <div class="text-box">
+        Reality is not always perceivable <br>
+        What’s perceivable is not always a reality <br>
+        Find a way out <br>
+        There is no way back <br>
+    </div>
+    <br>
+    <button onclick="startGame()">OK</button>
+  </div>
+
+  <!-- Monster -->
+  <img src="monster.png" alt="Monster" class="monster" id="monster" style="display: none;">
+
+  <!-- Clicks Counter -->
+  <div class="counter" id="counter" style="display: none;">
+    Clicks Left: 5
+  </div>
+
+  <!-- Arrow Buttons -->
+  <div class="arrows" id="arrows" style="display: none;">
+    <button class="arrow left-arrow" onclick="redirectTo('Dungeon_02ABonusRoom.html')">&#8592; Left</button>
+    <button class="arrow straight-arrow" onclick="redirectTo('Dungeon_03ARoom.html')">&#8593; Straight</button>
+    <button class="arrow right-arrow" onclick="redirectTo('Dungeon_03BRoom.html')">Right &#8594;</button>
+  </div>
+
+  <script src="Dungeon_02ARoom_js.js"></script>
+</body>
+</html>

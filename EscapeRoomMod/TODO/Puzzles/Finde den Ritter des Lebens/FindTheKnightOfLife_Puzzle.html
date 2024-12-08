@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knight of Life</title>
+    <style>
+        /* Dein vorhandenes CSS bleibt unverändert */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url('TTOL_BG.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .title h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .title h2 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        .knight-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .knight {
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .knight img {
+            width: 300px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+            animation: hoverEffect 3s infinite ease-in-out; 
+        }
+
+        @keyframes hoverEffect {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .knight .name {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 50px;
+            display: none; /* Ausblenden der Farben */
+        }
+
+        .statement {
+            margin-top: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            display: none; /* Ausblenden der Aussagen */
+        }
+
+        .instruction {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        .instruction .btn {
+            padding: 5px 10px; /* Größe des Knopfes verkleinern */
+            font-size: 0.9em; /* Schriftgröße verkleinern */
+        }
+
+        .question {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            margin-top: 10px;
+            padding: 5px 10px; /* Größe des Knopfes verkleinern */
+            font-size: 0.9em; /* Schriftgröße verkleinern */
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .selection-container {
+            display: flex;
+            align-items: center; /* Zentriere die Auswahl und den Knopf vertikal */
+            justify-content: center;
+            gap: 10px; /* Abstand zwischen der Auswahl und dem Knopf */
+            margin-top: 20px; /* Abstand von oben */
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>Finde den Ritter des Lebens</h1>
+        <h2>Du fragst jeden von ihnen: „Wer ist der schwarze Ritter?"</h2>
+        <button class="btn" id="showNamesBtn" onclick="showNames()">Zeige Antwort</button> <!-- Knopf zentriert -->
+    </div>
+    
+    <div class="knight-container">
+        <div class="knight">
+            <div class="name">Grüne Ritter</div>
+            <img src="KnightA.png" alt="Green Knight">
+            <div class="statement">„Er ist der Ritter des Lebens.“</div>
+        </div>
+        <div class="knight">
+            <div class="name">Weiße Ritter</div>
+            <img src="KnightB.png" alt="White Knight">
+            <div class="statement">„Er ist der Ritter des Todes.“</div>
+        </div>
+        <div class="knight">
+            <div class="name">Schwarze Ritter</div>
+            <img src="KnightC.png" alt="Black Knight">
+            <div class="statement">„Ich bin der Ritter des Verlieses.“</div>
+        </div>
+    </div>
+
+    <div class="instruction">
+        Im Anschluss fragst du jeden Ritter: <strong>„Wie lautet der Name des schwarzen Ritters?“</strong>
+        <br>
+        <button class="btn" id="showStatementsBtn" onclick="showStatements()">Zeige Antworten</button> <!-- Verkleinerter Knopf für Antworten unter der Frage -->
+        <br><br>
+        - Einer der drei Ritter ist der <strong>„Ritter des Lebens“</strong>, welcher immer die Wahrheit sagt. 
+        <br> 
+        - Einer der drei Ritter ist der<strong>„Ritter des Todes“</strong>, welcher immer lügt. 
+        <br> 
+        - Einer der drei Ritter ist der<strong>„Ritter des Verlieses.“</strong>, welcher manchmal die Wahrheit sagt und manchmal lügt.
+        <br>
+        <br>
+        Wer ist der Ritter des Lebens? 
+    </div>
+
+    <div class="selection-container">
+        <label for="answer">Wähle den Ritter des Lebens aus:</label>
+        <select id="answer">
+            <option value="A">Grüne Ritter</option>
+            <option value="B">Weiße Ritter</option>
+            <option value="C">Schwarze Ritter</option>
+        </select>
+        <button class="btn" onclick="checkAnswer()">Absenden</button> <!-- Übersetzter Knopf -->
+    </div>
+
+    <div id="result" class="question" style="margin-top: 20px;"></div> <!-- Resultat etwas höher -->
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value;
+            const result = document.getElementById('result');
+            if (answer === 'B') { // Update this to set the correct Knight of Life
+                result.textContent = "Das ist korrekt! Der weiße Ritter ist der Ritter des Lebens";
+            } else {
+                result.textContent = "Das ist leider falsch. Versuche es nochmal!";
+            }
+        }
+
+        function showStatements() {
+            const statements = document.querySelectorAll('.statement');
+            statements.forEach(statement => {
+                statement.style.display = 'block'; // Antworten anzeigen
+            });
+            document.getElementById('showStatementsBtn').style.display = 'none'; // Knopf verstecken
+        }
+
+        function showNames() {
+            const names = document.querySelectorAll('.name');
+            names.forEach(name => {
+                name.style.display = 'block'; // Ritterfarben anzeigen
+            });
+            document.getElementById('showNamesBtn').style.display = 'none'; // Knopf verstecken
+        }
+    </script>
+</body>
+</html>

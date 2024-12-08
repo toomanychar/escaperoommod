@@ -1,0 +1,12 @@
+Vor Ihnen stehen drei Ritter, die jeweils ihre Tür bewachen.
+Einer von ihnen ist der Ritter des Lebens, der nur die Wahrheit sagt.
+Einer von ihnen ist der Ritter des Todes, der nur Lügen erzählt.
+Einer von ihnen ist der Ritter des Verlieses, der wahllos Lügen und die Wahrheit erzählt.
+
+Sie können jedem Ritter Fragen zu den Türen oder zur Identität der anderen Ritter stellen. 
+Die ersten beiden Fragen, die Sie einem Ritter stellen, wird er problemlos beantworten. 
+Bei jeder dritten Frage wird der Ritter zwar antworten, aber auch Sie gefangen nehmen 
+und erst nach 5 Minuten wieder freilassen.
+
+Zwei Türen führen in eine Falle, eine Tür führt zum Schatz. 
+Sie können durch jede Tür gehen - die Ritter lassen Sie durch.
