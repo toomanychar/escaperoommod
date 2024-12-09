@@ -20,6 +20,48 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.secret-navigation {
+ z-index: 2;
+ min-height: 50px;
+ min-width: 80px;
+ position: absolute;
+ cursor: pointer;
+}
+
+.secret-btn {
+	opacity: 0.25;
+	display: none;
+}
+
+.secret-navigation:hover .secret-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+
 .interactable {
 
 }

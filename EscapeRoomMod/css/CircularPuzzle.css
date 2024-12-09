@@ -1,0 +1,67 @@
+body {
+    background-image: url('BG.jpg'); 
+    background-size: cover;          
+    background-position: center;     /* Centers the image */
+    background-repeat: no-repeat;    /* Prevents the image from repeating */
+    background-attachment: fixed;    /* Keeps the background in place when scrolling */
+}
+
+
+.game-container {
+    position: relative;
+    width: 400px; /* Larger size for full image */
+    height: 400px;
+}
+
+.background-container {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-image: url('Cat.jpg'); /* Full image */
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 0; /* Behind the puzzle */
+}
+
+.circle-container {
+    position: absolute;
+    top: 50%; /* Centering the puzzle */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; /* Match background size */
+    height: 400px;
+    z-index: 1;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background-image: url('Cat.jpg'); /* Full image */
+    background-size: 400px 400px; /* Match the background-container */
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.layer1 {
+    width: 400px;
+    height: 400px;
+    background-position: center;
+}
+
+.layer2 {
+    width: 300px;
+    height: 300px;
+    top: 50px;
+    left: 50px;
+    background-position: center;
+}
+
+.layer3 {
+    width: 200px;
+    height: 200px;
+    top: 100px;
+    left: 100px;
+    background-position: center;
+}

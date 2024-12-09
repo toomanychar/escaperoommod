@@ -9,14 +9,15 @@
 
 
 
-if(localStorage.getItem("count_timer")){
-    var count_timer = localStorage.getItem("count_timer");
-} else {
-    var count_timer = 60*60;
-}
-var minutes = parseInt(count_timer/60);
-var seconds = parseInt(count_timer%60);
 function countDownTimer(){
+	if(localStorage.getItem("count_timer")){
+		var count_timer = localStorage.getItem("count_timer");
+	} else {
+		var count_timer = 60*60;
+	}
+	var minutes = parseInt(count_timer/60);
+	var seconds = parseInt(count_timer%60);
+	
     if(seconds < 10){
         seconds= "0"+ seconds ;
     }if(minutes < 10){

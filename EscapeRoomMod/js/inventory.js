@@ -10,11 +10,15 @@ console.log("Inventory.js loaded")
 // 0 - Empty
 // 1 - Kaffeebohne
 // 2 - Kassette
+// 3 - Scroll 1 (room 11)
 const itemListing = []
 itemListing.push([0, "", "", "", ""])
 itemListing.push([1, "Kaffeebohne", "Kaffeebohnen! Wenn ich diese essen würde, würde ich mehr Zeit bekommen. Eine Kaffee wäre aber viel schöner...", "images/kaffeebohne.png", "Sie haben die Kaffeebohne verzerrt. +5 min"])
 itemListing.push([2, "Kassette", "Eine merkwürdige Kassette, die ich in dem Serverraum gefunden habe. Wo könnte ich diese wohl abspielen?", "images/Kassette.png", ""])
 // Kaffeebohne Image Quelle: https://similarpng.com/coffee-bean-isolated-on-transparent-background-png/
+itemListing.push([3, "Scroll from room 11", "TextTextText", "images/scroll.png", "I read the scroll..."])
+itemListing.push([4, "Scroll from room 14", "TextTextText", "images/scroll.png", "I read the scroll..."])
+itemListing.push([5, "Pickaxe from room 14", "TextTextText", "images/pickaxe.png", ""])
 
 // Create a completely empty inventory
 function initializeInventory() {
@@ -219,6 +223,9 @@ function useCurrentlySelectedItem() {
 					unSelectCurrentSlot()
 				}
 //				parent.location.reload()
+				break
+			case "3":
+				window.parent.location.href = "11.6_Scroll.html"
 				break
 			default:
 				removeFromInventory(itemId, 1)
