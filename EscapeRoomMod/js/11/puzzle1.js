@@ -1,7 +1,7 @@
 const puzzleSize = 3;
 const tileSize = 100; // Size of each tile
 const imageSize = 300; // Size of the entire image (3 tiles of 100px each side)
-const imagePath = 'images/11/riddle/example.jpg'; // Path to your puzzle image
+const imagePath = 'images/11/riddle/riddle1.png'; // Path to your puzzle image
 
 const puzzleContainer = document.getElementById('puzzle');
 let tiles = [];

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>The Dungeon</title>
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/dungeon.css" rel="stylesheet">
+	</head>
+
+	<body style="background-image:url(images/wall.jpg); background-size: 300px">
+	<br><br>
+	<div class="container"> <!-- START div container -->
+
+	<!-- Wenn JavaScript deaktiviert wird, wird eine Fehlermeldung angezeigt, und alle interaktive Objekten werden ausgeschaltet -->
+	<noscript>
+	<h3 class="alert alert-danger">
+	<center>
+	JavaScript ist deaktiviert! <br><br>
+	Um das Escape-Room spielen zu können, müssen Sie JavaScript in den Einstellungen Ihres Browsers für diese Webseite aktivieren!
+	</center>
+	</h3>
+	<style type="text/css">
+		.interactable, .btn, .btn-pac, .navigation {
+			display: none;
+		}
+	</style>
+	<br>
+	</noscript>
+	
+	<!-- Wenn localStorage IRGENDWIE deaktiviert wird, wird diese Fehlermeldung angezeigt -->
+	<h3 class="alert alert-danger" id="localStorageNotifier" style="display:none">
+	<center>
+		localStorage ist deaktiviert! <br><br>
+		Um das Escape-Room spielen zu können, müssen Sie localStorage in den Einstellungen Ihres Browsers für diese Webseite aktivieren!
+	</center>
+	</h3>
+	<script src="js/localStorageCheck.js"></script>
+
+	<script src="js/gamestate.js"></script>
+	
+	<div class="jumbotron jumbotron2">
+	
+	<style>
+	#inv {
+	  height: 500px;
+	  width: 1000px;
+	  display: none;
+	  border-radius: 3px;
+	}
+	</style>
+	
+	<!-- Inventory -->
+	<script>
+		function toggleInv() {
+			inv = document.getElementById("inv")
+			if (inv.style.display != "inline") {
+				inv.style.display = "inline"
+				document.getElementById("inv_button").innerHTML = "Inventar verbergen"
+				setFlag(2, 1)
+			} else {
+				inv.style.display = "none"
+				document.getElementById("inv_button").innerHTML = "Inventar anzeigen"
+				setFlag(2, 0)
+			}
+		}
+	</script>
+	<center>
+		<button id="inv_button" class="btn btn-lg btn-primary" onclick="toggleInv()">Inventar anzeigen</button>
+	</center>
+	<br>
+	<center>
+		<iframe id="inv" src="IFRAME_Inventory.html" title="Inventory"></iframe>
+	</center>
+	<script>
+		if (getFlag(2) == "1") {
+			document.getElementById("inv").style.display = "inline";
+			document.getElementById("inv_button").innerHTML = "Inventar verbergen"
+		}
+	</script>
+	
+	<!-- Progress checker -->
+	<script src="js/progressManager.js"></script>
+	<script> newSetProgress() </script>
+	<!-- Ab diesem Punkt muss man was ändern, um einen Raum zu gestalten -->
+
+
+
+
+
+
+
+
+
+		
+	<!-- Szene + Navigation -->
+	<center>
+	<div id="szene" class="szene" style="width:1000px; height:562px;  background-image:url(images/13/3.png); background-size: cover">
+		<div class="navigation" id="up" style="right:50%; margin-right: -75px;">
+			<a id="up_button" class="btn btn-primary btn-lg" href="13.6_LeftKnight.html" role="button">&#9650; Vorwärts</a>
+		</div>
+		<div class="navigation" id="right" style="left:90%; margin-left: -50px; top:50%; margin-top:-25px">
+			<a id="right_button" class="btn btn-primary btn-lg" href="13.2_Middle.html" role="button">Rechts &#9654;</a>
+		</div>
+	</div>
+	</center>
+	<br>
+	<!-- Text -->
+	<center>
+		<p id="text">TextTextTextTextText</p>
+	</center>
+	<!-- JS -->
+	<script>
+	
+	</script>
+
+
+
+
+
+
+
+
+
+
+	<!-- Ab diesem Punkt soll man nichts ändern -->
+	<!-- Notizen -->
+	<center>
+		<iframe src="IFRAME_Notizbuch.html" height="332" width="450" title="Notizen"></iframe>
+	</center>
+
+	<!-- Timer Script einbinden -->	
+	<script src="js/time.js"></script>
+	<!-- Timer Script anzeigen -->	
+	<div id="total-time-left" align="right"> </div> 
+
+	</div>
+	</div> <!-- ENDE div container -->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

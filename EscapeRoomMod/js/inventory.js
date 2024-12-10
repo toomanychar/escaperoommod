@@ -16,9 +16,13 @@ itemListing.push([0, "", "", "", ""])
 itemListing.push([1, "Kaffeebohne", "Kaffeebohnen! Wenn ich diese essen würde, würde ich mehr Zeit bekommen. Eine Kaffee wäre aber viel schöner...", "images/kaffeebohne.png", "Sie haben die Kaffeebohne verzerrt. +5 min"])
 itemListing.push([2, "Kassette", "Eine merkwürdige Kassette, die ich in dem Serverraum gefunden habe. Wo könnte ich diese wohl abspielen?", "images/Kassette.png", ""])
 // Kaffeebohne Image Quelle: https://similarpng.com/coffee-bean-isolated-on-transparent-background-png/
-itemListing.push([3, "Scroll from room 11", "TextTextText", "images/scroll.png", "I read the scroll..."])
-itemListing.push([4, "Scroll from room 14", "TextTextText", "images/scroll.png", "I read the scroll..."])
-itemListing.push([5, "Pickaxe from room 14", "TextTextText", "images/pickaxe.png", ""])
+itemListing.push([3, "Schriftrolle 1", "Die Schriftrolle aus dem ersten Raum des Verlieses. Darauf stehen ein paar Informationen.", "images/scroll1.png", "Ich lese die Schriftrolle..."])
+itemListing.push([4, "Schriftrolle 2", "Die Schriftrolle aus dem zweiten Raum des Verlieses. Darauf stehen ein paar Informationen.", "images/scroll2.png", "Ich lese die Schriftrolle..."])
+itemListing.push([5, "Schriftrolle 3", "Die Schriftrolle aus dem dritten Raum des Verlieses. Darauf stehen ein paar Informationen.", "images/scroll3.png", "Ich lese die Schriftrolle..."])
+itemListing.push([6, "Schriftrolle 4", "Die Schriftrolle aus dem vierten Raum des Verlieses. Darauf stehen ein paar Informationen.", "images/scroll4.png", "Ich lese die Schriftrolle..."])
+itemListing.push([7, "Schriftrolle 5", "Die Schriftrolle aus dem fünften Raum des Verlieses. Darauf stehen ein paar Informationen.", "images/scroll5.png", "Ich lese die Schriftrolle..."])
+itemListing.push([8, "Spitzhacke", "Eine Spitzhacke, die ich in dem vierten Raum des Verlieses gefunden habe. Wie könnte ich diese eigentlich anwenden?", "images/pickaxe.png", ""])
+itemListing.push([9, "Laterne", "Eine schwache Laterne, die ich im dunklen Labyrinth gefunden habe. Sie wird ziemlich heiß, wenn sie brennt.", "images/lantern.png", "Ich schalte die Laterne um."])
 
 // Create a completely empty inventory
 function initializeInventory() {
@@ -210,6 +214,7 @@ function useCurrentlySelectedItem() {
 	itemInfo = itemListing[itemId]
 	itemUseConsequence = itemInfo[4]
 	if (itemUseConsequence.length > 0) {
+		document.getElementById("itemUseConsequence").innerHTML = itemUseConsequence
 		switch (itemId) {
 			case "1":
 				// Add time to the timer
@@ -225,7 +230,25 @@ function useCurrentlySelectedItem() {
 //				parent.location.reload()
 				break
 			case "3":
-				window.parent.location.href = "11.6_Scroll.html"
+				window.parent.location.href = "11_Scroll.html"
+				break
+			case "4":
+				window.parent.location.href = "12_Scroll.html"
+				break
+			case "5":
+				window.parent.location.href = "13_Scroll.html"
+				break
+			case "6":
+				window.parent.location.href = "14_Scroll.html"
+				break
+			case "7":
+				window.parent.location.href = "15_Scroll.html"
+				break
+			case "9":
+				var lantern = Boolean(getFlag("lantern"))
+				lantern = !lantern
+				setFlag("lantern", Number(lantern))
+				parent.location.reload()
 				break
 			default:
 				removeFromInventory(itemId, 1)
@@ -234,8 +257,6 @@ function useCurrentlySelectedItem() {
 					unSelectCurrentSlot()
 				}
 		}
-		
-		document.getElementById("itemUseConsequence").innerHTML = itemUseConsequence
 		
 		renderInventory()
 	} else {

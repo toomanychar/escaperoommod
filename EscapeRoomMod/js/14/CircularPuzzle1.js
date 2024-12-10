@@ -1,4 +1,7 @@
-document.querySelectorAll('.circle').forEach((circle, index) => {
+if (getFlag("14_l") == "1") {
+	document.getElementById("text").innerHTML = "Dieses Puzzle habe ich schon gelöst."
+} else {
+	document.querySelectorAll('.circle').forEach((circle, index) => {
     let rotation = Math.floor(Math.random() * 360); // Random initial rotation
     const targetRotation = 0; // Target rotation angle for alignment
 
@@ -28,6 +31,9 @@ document.querySelectorAll('.circle').forEach((circle, index) => {
         document.addEventListener('mouseup', onMouseUp);
     });
 });
+}
+
+
 
 // Function to check alignment with refined success criteria
 function checkAlignment() {
@@ -49,8 +55,7 @@ function checkAlignment() {
     });
 
     if (isAligned) {
-        alert("You succeed");
-        // Redirect to another page
-        // window.location.href = "page.html"; // Replace with target URL
+		alert('Herzlichen Glückwunsch, Sie haben das Puzzle gelöst!');
+		setFlag("14_l", 1)
     }
 }

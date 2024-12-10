@@ -100,12 +100,12 @@
 		
 	<!-- Szene + Navigation -->
 	<center>
-	<div id="szene" class="szene" style="width:1000px; height:500px; background-image:url(images/11/2/00.png); background-size: cover">
+	<div id="szene" class="szene" style="width:1000px; height:562px;  background-image:url(images/11/2/00.png); background-size: cover">
 		<div class="navigation" id="left" style="right:90%; margin-right: -50px; top:50%; margin-top:-25px">
 			<a class="btn btn-primary btn-lg" href="11.2_Riddle1.html" role="button">&#9664; Links</a>
 		</div>
 		<div class="navigation" id="up" style="right:50%; margin-right: -75px;">
-			<a id="up_button" class="btn btn-primary btn-lg" href="11.3_Sign.html" role="button">&#9650; Vorwärts</a>
+			<a id="up_button" class="btn btn-primary btn-lg" role="button" disabled>&#9650; Vorwärts</a>
 		</div>
 		<div class="navigation" id="down" style="right:50%; margin-right: -75px; top:90%; margin-top:-25px">
 			<a class="btn btn-primary btn-lg" href="11.0_Room.html" role="button">&#9660; Zurück</a>
@@ -127,6 +127,7 @@
 	document.getElementById("szene").style.backgroundImage = ("url(images/11/2/" + left_riddle) + right_riddle + ".png"
 	if (left_riddle == 1 && right_riddle == 1) {
 		document.getElementById("up_button").href = "11.5_Crate.html"
+		document.getElementById("up_button").removeAttribute("disabled", "")
 	}
 	</script>
 

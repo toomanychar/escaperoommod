@@ -100,9 +100,9 @@
 		
 	<!-- Szene + Navigation -->
 	<center>
-	<div id="szene" class="szene" style="width:1000px; height:500px; background-image:url(images/10/5_.png); background-size: cover">
+	<div id="szene" class="szene" style="width:1000px; height:562px;  background-image:url(images/10/5_.png); background-size: cover">
 		<div class="navigation" id="up" style="right:50%; margin-right: -75px;">
-			<a class="btn btn-primary btn-lg" href="15.0_Room.html" role="button">&#9650; Vorwärts</a>
+			<div class="btn btn-primary btn-lg" onclick='setFlag("15_direction", "1"); window.location.href="15.1_Maze.html"' role="button">&#9650; Vorwärts</div>
 		</div>
 		<div class="navigation" id="down" style="right:50%; margin-right: -75px; top:90%; margin-top:-25px">
 			<a class="btn btn-primary btn-lg" href="10.5_Hall.html" role="button">&#9660; Zurück</a>
@@ -116,9 +116,6 @@
 	</center>
 	<!-- JS -->
 	<script>
-	if (getFlag(3) == "1") {
-		document.getElementById("szene").style.backgroundImage = "url(images/10/1d.png)"
-	}
 	</script>
 
 

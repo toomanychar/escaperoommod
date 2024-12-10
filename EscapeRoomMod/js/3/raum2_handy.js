@@ -34,26 +34,26 @@ alert("Für den Zugang zum Handy müssen offensichtlich vier Fragen richtig bean
 				else
 				{
 				alert("Leider falsch, versuche es nochmal!");
-				document.location.href="3.2_Schreibtisch.html";
+				document.location.href="3.1.2_Schreibtisch.html";
 				}
 			
 			}
 			else
 			{
 			alert("Leider falsch, versuche es nochmal!");
-			document.location.href="3.2_Schreibtisch.html";
+			document.location.href="3.1.2_Schreibtisch.html";
 			}
 				
 		}
 		else
 		{
 		alert("Leider falsch, versuche es nochmal!");
-		document.location.href="3.2_Schreibtisch.html";
+		document.location.href="3.1.2_Schreibtisch.html";
 		}
 		
 	}
 	else
 	{
 	alert("Leider falsch, versuche es nochmal!");
-	document.location.href="3.2_Schreibtisch.html";
+	document.location.href="3.1.2_Schreibtisch.html";
 	}
