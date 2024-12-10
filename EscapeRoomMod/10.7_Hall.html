@@ -100,7 +100,7 @@
 		
 	<!-- Szene + Navigation -->
 	<center>
-	<div id="szene" class="szene" style="width:1000px; height:500px; background-image:url(images/10/7.png); background-size: cover">
+	<div id="szene" class="szene" style="width:1000px; height:562px;  background-image:url(images/10/7.png); background-size: cover">
 		<div class="navigation" id="up" style="right:50%; margin-right: -75px;">
 			<a id="up_button" class="btn btn-primary btn-lg" role="button" disabled>&#9650; Vorwärts</a>
 		</div>
@@ -108,13 +108,14 @@
 			<a class="btn btn-primary btn-lg" href="10.6_Hall.html" role="button">&#9660; Zurück</a>
 		</div>
 
-		<a id="login" class="btn-pac" style="left:76.5%; top:57%; width:210px; height:210px;" href=""></a>
+		<a id="login" class="btn-pac" style="left:76.5%; top:57%; width:210px; height:210px;" href="10.7.1_Console.html"></a>
 	</div>
 	</center>
 	<br>
 	<!-- Text -->
 	<center>
-		<p id="text">TextTextTextTextText</p>
+		<p id="text1">Diese Tür sieht viel futuristischer aus als ihre Umgebung.</p>
+		<p id="text2">Sie ist aber geschlossen - vielleicht kann ich sie über die Konsole öffnen?</p>
 	</center>
 	<!-- JS -->
 	<script>
@@ -124,6 +125,8 @@
 		var up_button = document.getElementById("up_button")
 		up_button.removeAttribute('disabled')
 		up_button.href = "200.0_End.html"
+		document.getElementById("text1").innerHTML = "Die futuristische Tür ist jetzt endlich geöffnet."
+		document.getElementById("text2").innerHTML = "Es bleibt nur, durch sie zu gehen."
 	}
 	</script>
 

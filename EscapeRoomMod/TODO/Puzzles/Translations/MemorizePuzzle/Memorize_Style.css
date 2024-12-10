@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('MemorizeBG.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff; /* Adjust text color for better visibility on background */
+}
+
+.container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for better contrast */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+.tile {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    border: 1px solid #999;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.tile.correct {
+    background-color: green !important;
+}
+
+.tile.wrong {
+    background-color: red !important;
+}
