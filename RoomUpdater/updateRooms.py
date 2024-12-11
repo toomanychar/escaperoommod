@@ -16,7 +16,8 @@ fileList = os.listdir("roomsToBeUpdated")
 searchedText = "<!-- START div container -->" # After the first occurance of this text, addedText will be added
 
 viewLength = 400 # The length of the view you are going to get into every file when you approve them
-manuallyApprove = True # Change this to False if you don't want to manually approve each file
+manuallyApprove = False # Change this to False if you don't want to manually approve each file
+approved = "y"
 
 unapprovedFiles = []
 
@@ -41,26 +42,26 @@ for fileName in fileList:
 
 		
 		index = rawText.find(searchedText) + len(searchedText) # Index where addedText will be added
-		textLeft = text[:index]
-		textRight = text[index:]
+		textLeft = rawText[:index]
+		textRight = rawText[index:]
 		newText = textLeft + addedText + textRight
 		
 		
 		if manuallyApprove:
 			cls()
-			print(newText[index-viewlength//2:index+viewlength//2])
+			print(newText[index-viewLength//2:index+viewLength//2])
 			print("-"*50)
 			approved = input(" | Approve file " + fileName + "? (y/n) ")
-			if approved == "y" or approved == "yes" or approved == "Y":
-				with open("updatedRooms/" + fileName, 'w') as f2:
-					f2.write(newText)
-			else:
-				unapproved.append([fileName, "Manually rejected"])
+		if approved == "y" or approved == "yes" or approved == "Y":
+			with open("updatedRooms/" + fileName, 'w') as f2:
+				f2.write(newText)
+		else:
+			unapprovedFiles.append([fileName, "Manually rejected"])
 
-if unapproved:
+if unapprovedFiles:
 	print("The following files have been unapproved:")
 	print("------------------------------------------")
-	for nameReason in unapproved:
+	for nameReason in unapprovedFiles:
 		print("Filename:"  + nameReason[0])
 		print("Reason:"  + nameReason[1])
 		print("------------------------------------------")
