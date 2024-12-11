@@ -150,12 +150,24 @@
 						askQuestion(3, 1, 0)
 					}
 					optionSelector.innerHTML = ""
-					break;
+					break
+				case "ident":
+					optionSelector.removeAttribute("disabled", "")
+					askButton.setAttribute("disabled", "")
+					askButton.onclick = "";
+					optionSelector.innerHTML = "<option value='' selected>...Option wählen</option>\n<option value='1'>...linken Ritters?</option>\n<option value='2'>...mittleren Ritters?</option>\n<option value='3'>...rechten Ritters?</option>"
+					break
+				case "ident2":
+					optionSelector.removeAttribute("disabled", "")
+					askButton.setAttribute("disabled", "")
+					askButton.onclick = "";
+					optionSelector.innerHTML = "<option value='' selected>...Option wählen</option>\n<option value='1'>...Lebens?</option>\n<option value='2'>...Todes?</option>\n<option value='3'>...Verlieses?</option>"
+					break
 				default:
 					optionSelector.setAttribute("disabled", "")
 					askButton.setAttribute("disabled", "")
 					askButton.onclick = "";
-					optionSelector.innerHTML = "...Option wählen"
+					optionSelector.innerHTML = "<option value=''>...Option wählen</option>"
 			}
 		}
 		
